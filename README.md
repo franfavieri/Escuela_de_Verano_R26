@@ -14,7 +14,7 @@ El curso se desarrollará en **5 clases virtuales** a través de **Zoom**, con u
 
 | Fecha | Clase | Contenido |
 |--------|-------|----------|
-| **24 de febrero de 2025** | **Encuentro 1** | Introducción a R y las Ciencias Sociales Computacionales |
+| **02 de marzo de 2026** | **Encuentro 1** | Introducción a R y las Ciencias Sociales Computacionales |
 | **25 de febrero de 2025** | **Encuentro 2** | RBase yRStudio |
 | **26 de febrero de 2025** | **Encuentro 3** | Manipulación, transformación y procesamiento de datos|
 | **27 de febrero de 2025** | **Encuentro 4** | Visualización de datos en R |
