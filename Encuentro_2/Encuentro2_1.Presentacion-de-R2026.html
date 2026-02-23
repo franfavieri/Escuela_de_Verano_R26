@@ -26,79 +26,51 @@ class: center, middle, inverse, title-slide
 
 
 
+class: center, middle, inverse, title-slide
+
+.title[
+# Encuentro 2: Introducción a lenguaje de programación R
+]
+
+.author[
+Francisco Favieri | Beatriz Soria | Anabella Abarzua Cutroni
+]
+
+---
+
 class: middle, center
 
-# ¿Qué es [R](https://cran.r-project.org/)?
+# ¿Qué es R?
 Material adaptado del trabajo realizado por Pablo Tiscornia y Guido Weksler
 
 ---
+
 class: inverse, center
 
 # R es un software abierto
 
-####✅ Gratuito – Sin costos de licencia.
-####✅ Personalizable – Modificable según necesidades.
-####✅ Comunidad Activa – Desarrollo colaborativo.
-####✅ Transparente – Código accesible y auditable.
-####✅ Evolución Rápida – Innovación constante.
-####📊 Ideal para estadística, ciencia de datos y análisis numérico.
-
+- Gratuito  
+- Código auditable  
+- Comunidad activa  
+- Evolución constante  
+- Ideal para estadística y ciencia de datos  
 
 ---
-class: inverse, center
 
-# R es...
-
-Abierto
-
-&lt;img src="img/r_software_abierto.jpg" alt="" width="80%" style="display: block; margin: auto;" /&gt;
-
----
 class: inverse
 
-# R es...
+# R es un lenguaje para análisis de datos
 
+- R base  
+- Paquetes  
+- Funciones  
 
-###- ✅Un lenguaje para el procesamiento y análisis de datos.
-  
-###- 🖥️️ El lenguaje troncal es conocido como "R base".
-  
-###- 📦 Sobre esa base se desarrollan un conjunto de funciones y paquetes que incluso pueden cambiar ciertas formas de programar el mismo lenguaje.
-
-###- 🔑 Importante retener -por ahora- la idea de lenguaje: PAQUETES Y FUNCIONES.
-  
-  
 ---
-class: middle, center, inverse
 
+class: middle, center, inverse
 background-image: url(img/R1.PNG)
 background-size: contain
 
----
-
-class: middle, center, inverse
-
-background-image: url(img/R2.PNG)
-background-size: contain
-
----
-class: middle, center, inverse
-
-background-image: url(img/R3.PNG)
-background-size: contain
-
----
-class: middle, center, inverse
-
-background-image: url(img/R4.PNG)
-background-size: contain
-
----
-class: middle, center, inverse
-
-background-image: url(img/R5.PNG)
-background-size: contain
-  
 ---
 
 class: middle, center
@@ -106,115 +78,49 @@ class: middle, center
 # ¿Por qué R?
 
 ---
+
 class: inverse
 
-## ¿Por qué R? 🚀 **Ventajas de R en el análisis de datos**  
+## Ventajas principales
 
-#### - 🔄 **Automatización:** Permite **sistematizar tareas repetitivas** y optimizar flujos de trabajo.  
-#### - 🛠️ **Personalización:** Posibilidad de **crear funciones a medida** para adaptarse a necesidades específicas.  
-#### - 📌 **Reproductibilidad:** Garantiza la **reproducibilidad y estandarización** de procesos.  
-#### - ⚡ **Eficiencia:** Destina más memoria al funcionamiento que a la plataforma (**vs SPSS o SAS**).  
-
-
----
-class: inverse
-
-## ¿Por qué R?
-
-### - Su comunidad potencia la capacidad de consulta y respuesta.
-
-
-&lt;img src="img/r_ayuda.png" alt="" width="70%" style="display: block; margin: auto;" /&gt;
-📖  [RladiesBA](https://rladiesba.netlify.app/)
----
-class: inverse
-
-## ¿Por qué R?
-
-###- Consultas sobre los programas estadísticos en Google
-  
-&lt;img src="img/google_trend.png" alt="" width="100%" style="display: block; margin: auto;" /&gt;
+- Automatización  
+- Personalización  
+- Reproducibilidad  
+- Eficiencia  
 
 ---
 
-
 class: inverse
 
-## R vs otros programas de licencia paga
+## Comunidad
 
-- Es gratuito (todas sus versiones, todas sus herramientas, todo el tiempo).
-
---
-
-- Nada de "crackear" el programa, buscarlo en la web (¿¡Eso es un virus!?) o esperar a ese pendrive salvador con el instalador.
-
---
-  
-- Con R se generó una comunidad dedicada a facilitar el acceso al lenguaje y, también, a su desarrollo (los "mortales" podemos crear herramientas en función de los problemas con los que nos enfrentamos).
-
---
-  
-- Es más fácil ayudar y que te ayuden (foros, comunidades, tutoriales).
-
-
---
-  
-- R te demanda mayor conocimiento sobre tus datos, tus procesos y también sobre estadística.
+- Foros y tutoriales  
+- R-Ladies  
+- StackOverflow  
 
 ---
 
 class: inverse, middle
-## Rstudio 🖥
-###- 🌎 **Popularidad:** Es el **entorno más utilizado** para programar en R.  
-###- 💰 Es una empresa que no cobra por el uso del programa, solo por soporte técnico.  
-###- 🔄 **Versatilidad:** También funciona como un **traductor de R** a diferentes lenguajes, permitiendo:  
-  ####- 📊 **Trabajar el dato**  
-  ####- 📈 **Visualizar resultados**  
-  ####- 📝 **Generar reportes** en múltiples formatos: `.doc`, `.xlsx`, `.pdf`, **presentaciones**, **dashboards**, y más.  
 
----
-class: inverse, center, middle
-
-.pull-left[
-
-## R:
-
-&lt;br&gt;
-
-&lt;img src="img/r_software_abierto.jpg" alt="" width="100%" style="display: block; margin: auto;" /&gt;
-]
-
-.pull-right[
-
-## RStudio:
-
-&lt;br&gt;
-
-&lt;img src="img/r_panel_rstudio.jpg" alt="" width="100%" style="display: block; margin: auto;" /&gt;
-]
+# R vs RStudio
 
 ---
 
-##🖥️ Diferencia entre RStudio y R Base
+class: inverse
 
-###🔹 R Base es el lenguaje de programación estadístico en sí mismo. 
-
-###📜 Un lenguaje de código abierto especializado en estadística y ciencia de datos.
-###🖥️ Un entorno básico llamado R GUI (muy simple, solo una consola de comandos).
-### 📦 Paquetes y funciones fundamentales para cálculos, modelado estadístico y gráficos.
+## R
+- Lenguaje estadístico  
+- Ejecuta código  
+- Consola básica (R GUI)
 
 ---
-###🔹 RStudio es un entorno de desarrollo integrado (IDE) que facilita el trabajo con R Base. 
 
-####✅ Ventajas de usar RStudio sobre R Base:
-####🌟 Interfaz gráfica avanzada (más intuitiva que R GUI).
-####📂 Gestión de proyectos para organizar scripts, datos y gráficos.
-####📊 Vista en tiempo real de gráficos y datos sin necesidad de guardar archivos.
-####📜 Facilita la edición y ejecución de código con resaltado de sintaxis y autocompletado.
-####📈 Generación de reportes en Word, PDF, HTML, Dashboards con R Markdown y Shiny.
+class: inverse
 
-
-
+## RStudio
+- Entorno de desarrollo (IDE)  
+- Organiza proyectos  
+- Genera reportes y presentaciones  
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

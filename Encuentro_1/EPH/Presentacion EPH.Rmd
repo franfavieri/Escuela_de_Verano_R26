@@ -1,13 +1,18 @@
 ---
 title: "Encuentro 1: EPH"
-author:  "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R - Febrero 2025 
-
-Francisco Favieri | Beatriz Soria"
+subtitle: "Escuela de Verano"
+author: |
+  <div class="author-right">
+  Francisco Favieri | Beatriz Soria | Anabella Abarzua Cutroni
+  </div>
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: xaringan-themer.css
-editor_options: 
+    css: 
+      - default
+      - xaringan-themer.css
+      - custom.css
+editor_options:
   chunk_output_type: console
 ---
 
