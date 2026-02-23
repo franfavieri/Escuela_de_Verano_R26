@@ -14,18 +14,17 @@ El curso se desarrollará en **5 clases virtuales** a través de **Zoom**, con u
 
 | Fecha | Clase | Contenido |
 |--------|-------|----------|
-| **02 de marzo de 2026** | **Encuentro 1** | Introducción a R y las Ciencias Sociales Computacionales |
-| **25 de febrero de 2025** | **Encuentro 2** | RBase yRStudio |
-| **26 de febrero de 2025** | **Encuentro 3** | Manipulación, transformación y procesamiento de datos|
-| **27 de febrero de 2025** | **Encuentro 4** | Visualización de datos en R |
-| **28 de febrero de 2025** | **Encuentro 5** | Producción de informes y automatización de reportes |
+| **2 de marzo de 2026** | **Encuentro 1** | Introducción a R y las Ciencias Sociales Computacionales |
+| **3 de marzo de 2026** | **Encuentro 2** | RBase yRStudio |
+| **4 de marzo de 2026** | **Encuentro 3** | Manipulación, transformación y procesamiento de datos|
+| **5 de marzo de 2026** | **Encuentro 4** | Visualización de datos en R |
+| **6 de marzo de 2026** | **Encuentro 5** | Producción de informes y automatización de reportes |
 
 ### 👨‍🏫 **Docentes y Organizadores**  
 El curso será dictado por:  
 - **Francisco Nicolás Favieri** (CONICET - GEIS - IISE - FACSO - UNSJ)  
-- **Beatriz Soria** (FCPyS - UNCuyo)  
-
-Además, se contará con la participación de **especialistas invitados** en distintas temáticas del curso.  
+- **Beatriz Soria** (FCPyS - UNCuyo)
+- **Anabella Abarzua Cutroni** (CONICET/FCPYS-UNCuyo)
 
 ### 🛠️ **Requisitos Técnicos**  
 Para participar en el taller, se recomienda contar con:  
