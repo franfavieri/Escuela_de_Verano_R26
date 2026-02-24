@@ -14,6 +14,16 @@ output:
 editor_options:
   chunk_output_type: console
 ---
+```{r css-fix, echo=FALSE, results='asis'}
+cat("
+<style>
+.remark-slide-content {
+  text-shadow: none !important;
+}
+</style>
+")
+
+```
 
 ```{r xaringan-themer, include = FALSE}
 #devtools::install_github("gadenbuie/xaringanthemer")
@@ -21,7 +31,7 @@ library(xaringanthemer)
 duo_accent(primary_color = "#006747", secondary_color = "#F5F5F5")
 ```
 
-class: middle, center
+
 
 # ¿Qué es [R](https://cran.r-project.org/)?
 Material adaptado del trabajo realizado por Pablo Tiscornia y Guido Weksler
@@ -38,17 +48,6 @@ class: inverse, center
 ####✅ Evolución Rápida – Innovación constante.
 ####📊 Ideal para estadística, ciencia de datos y análisis numérico.
 
-
----
-class: inverse, center
-
-# R es...
-
-Abierto
-
-```{r echo=FALSE, out.width = '80%', fig.align = 'center'}
-knitr::include_graphics("img/r_software_abierto.jpg")
-```
 
 ---
 class: inverse
@@ -127,41 +126,8 @@ knitr::include_graphics("img/r_ayuda.png")
 ```
 📖  [RladiesBA](https://rladiesba.netlify.app/)
 ---
-class: inverse
-
-## ¿Por qué R?
-
-###- Consultas sobre los programas estadísticos en Google
-  
-```{r echo=FALSE, out.width = '100%', fig.align = 'center'}
-knitr::include_graphics("img/google_trend.png") 
-```
-
----
 
 
-class: inverse
-
-## R vs otros programas de licencia paga
-
-- Es gratuito (todas sus versiones, todas sus herramientas, todo el tiempo).
-
---
-
-- Nada de "crackear" el programa, buscarlo en la web (¿¡Eso es un virus!?) o esperar a ese pendrive salvador con el instalador.
-
---
-  
-- Con R se generó una comunidad dedicada a facilitar el acceso al lenguaje y, también, a su desarrollo (los "mortales" podemos crear herramientas en función de los problemas con los que nos enfrentamos).
-
---
-  
-- Es más fácil ayudar y que te ayuden (foros, comunidades, tutoriales).
-
-
---
-  
-- R te demanda mayor conocimiento sobre tus datos, tus procesos y también sobre estadística.
 
 ---
 
