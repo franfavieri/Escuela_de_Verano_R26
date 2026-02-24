@@ -4,7 +4,8 @@ subtitle: "**Escuela de Verano de R**"
 author: |
   **Francisco Favieri**  
   **Beatriz Soria**
-date: "**Año 2025**"
+  **Anabella Abrazúa Cutroni**
+date: "**Año 2026**"
 output:
   slidy_presentation:
     keep_md: true

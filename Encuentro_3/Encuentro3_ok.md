@@ -4,7 +4,8 @@ subtitle: "**Escuela de Verano de R**"
 author: |
   **Francisco Favieri**  
   **Beatriz Soria**
-date: "**Año 2025**"
+  **Anabella Abrazúa Cutroni**
+date: "**Año 2026**"
 output:
   slidy_presentation:
     keep_md: true
@@ -90,26 +91,24 @@ install_github("tidyverse/ggplot2")  # Instala ggplot2 desde GitHub
 ```
 
 ```
-## rlang (1.1.4 -> 1.1.5) [CRAN]
-## glue  (1.7.0 -> 1.8.0) [CRAN]
-## cli   (3.6.3 -> 3.6.4) [CRAN]
-## 
-##   There is a binary version available but the source version is later:
-##     binary source needs_compilation
-## cli  3.6.3  3.6.4              TRUE
-## 
-## package 'rlang' successfully unpacked and MD5 sums checked
-## package 'glue' successfully unpacked and MD5 sums checked
+## cli (3.6.4 -> 3.6.5) [CRAN]
+```
+
+```
+## package 'cli' successfully unpacked and MD5 sums checked
+```
+
+```
 ## 
 ## The downloaded binary packages are in
-## 	C:\Users\franmsi\AppData\Local\Temp\Rtmp6BhNAa\downloaded_packages
+## 	C:\Users\franmsi\AppData\Local\Temp\Rtmpm4XuZO\downloaded_packages
 ## ── R CMD build ─────────────────────────────────────────────────────────────────
-##          checking for file 'C:\Users\franmsi\AppData\Local\Temp\Rtmp6BhNAa\remotes5b481d7053d9\tidyverse-ggplot2-d835cfe/DESCRIPTION' ...  ✔  checking for file 'C:\Users\franmsi\AppData\Local\Temp\Rtmp6BhNAa\remotes5b481d7053d9\tidyverse-ggplot2-d835cfe/DESCRIPTION'
-##       ─  preparing 'ggplot2': (32.6s)
+##          checking for file 'C:\Users\franmsi\AppData\Local\Temp\Rtmpm4XuZO\remotes5c30790288b\tidyverse-ggplot2-b5163bc/DESCRIPTION' ...     checking for file 'C:\Users\franmsi\AppData\Local\Temp\Rtmpm4XuZO\remotes5c30790288b\tidyverse-ggplot2-b5163bc/DESCRIPTION' ...   ✔  checking for file 'C:\Users\franmsi\AppData\Local\Temp\Rtmpm4XuZO\remotes5c30790288b\tidyverse-ggplot2-b5163bc/DESCRIPTION'
+##       ─  preparing 'ggplot2': (30.8s)
 ##    checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   ✔  checking DESCRIPTION meta-information
-##       ─  checking for LF line-endings in source and make files and shell scripts (603ms)
+##       ─  checking for LF line-endings in source and make files and shell scripts (999ms)
 ##       ─  checking for empty or unneeded directories
-##       ─  building 'ggplot2_3.5.1.9000.tar.gz'
+##       ─  building 'ggplot2_4.0.2.9000.tar.gz'
 ##      
 ## 
 ```
@@ -129,212 +128,334 @@ installed.packages()[,1]  # Muestra una lista de paquetes instalados
 ```
 
 ```
-##               abind                ACEP            antiword             arcenso 
-##             "abind"              "ACEP"          "antiword"           "arcenso" 
-##                 ash         AsioHeaders             askpass          assertthat 
-##               "ash"       "AsioHeaders"           "askpass"        "assertthat" 
-##                  av           backports           base64enc          bayestestR 
-##                "av"         "backports"         "base64enc"        "bayestestR" 
-##                  BH                bigD              binman                 bit 
-##                "BH"              "bigD"            "binman"               "bit" 
-##               bit64              bitops                blob                brew 
-##             "bit64"            "bitops"              "blob"              "brew" 
-##                brio               broom               bslib              cachem 
-##              "brio"             "broom"             "bslib"            "cachem" 
-##               callr                 car             carData               cards 
-##             "callr"               "car"           "carData"             "cards" 
-##             caTools          cellranger              chattr           checkmate 
-##           "caTools"        "cellranger"            "chattr"         "checkmate" 
-##            chromote            classInt                 cli               clipr 
-##          "chromote"          "classInt"               "cli"             "clipr" 
-##               clock         collections          colorspace          commonmark 
-##             "clock"       "collections"        "colorspace"        "commonmark" 
-##              config          conflicted                coro         correlation 
-##            "config"        "conflicted"              "coro"       "correlation" 
-##            corrplot             cowplot               cpp11              crayon 
-##          "corrplot"           "cowplot"             "cpp11"            "crayon" 
-##         credentials           crosstalk                crul                curl 
-##       "credentials"         "crosstalk"              "crul"              "curl" 
-##           cyclocomp          data.table          datawizard                 DBI 
-##         "cyclocomp"        "data.table"        "datawizard"               "DBI" 
-##              dbplyr        densEstBayes               Deriv                desc 
-##            "dbplyr"      "densEstBayes"             "Deriv"              "desc" 
-##            devtools             diagram               dials          DiceDesign 
-##          "devtools"           "diagram"             "dials"        "DiceDesign" 
-##             diffobj              digest             discrim      distributional 
-##           "diffobj"            "digest"           "discrim"    "distributional" 
-##                doBy            doFuture             downlit               dplyr 
-##              "doBy"          "doFuture"           "downlit"             "dplyr" 
-##                  DT              dtplyr               e1071          effectsize 
-##                "DT"            "dtplyr"             "e1071"        "effectsize" 
-##            ellipsis                 eph            evaluate               expss 
-##          "ellipsis"               "eph"          "evaluate"             "expss" 
-##           extrafont         extrafontdb               fansi              farver 
-##         "extrafont"       "extrafontdb"             "fansi"            "farver" 
-##             fastmap           flipbookr         fontawesome   fontBitstreamVera 
-##           "fastmap"         "flipbookr"       "fontawesome" "fontBitstreamVera" 
-##      fontLiberation          fontquiver             forcats             foreach 
-##    "fontLiberation"        "fontquiver"           "forcats"           "foreach" 
-##         formattable             Formula               fresh                  fs 
-##       "formattable"           "Formula"             "fresh"                "fs" 
-##               furrr              future        future.apply              gargle 
-##             "furrr"            "future"      "future.apply"            "gargle" 
-##             gdtools            generics                gert              gfonts 
-##           "gdtools"          "generics"              "gert"            "gfonts" 
-##               ggalt           gganimate              ggdist           ggfittext 
-##             "ggalt"         "gganimate"            "ggdist"         "ggfittext" 
-##             ggforce               ggmap             ggplot2             ggrepel 
-##           "ggforce"             "ggmap"           "ggplot2"           "ggrepel" 
-##            ggridges           ggspatial              ggtext            ggthemes 
-##          "ggridges"         "ggspatial"            "ggtext"          "ggthemes" 
-##                  gh              gifski                Gini            gitcreds 
-##                "gh"            "gifski"              "Gini"          "gitcreds" 
-##             globals                glue         googledrive       googlesheets4 
-##           "globals"              "glue"       "googledrive"     "googlesheets4" 
-##               gower               GPfit           gridExtra            gridtext 
-##             "gower"             "GPfit"         "gridExtra"          "gridtext" 
-##                  gt              gtable           gtsummary             hardhat 
-##                "gt"            "gtable"         "gtsummary"           "hardhat" 
-##               haven                here               highr                 hms 
-##             "haven"              "here"             "highr"               "hms" 
-##          hrbrthemes           htmlTable           htmltools         htmlwidgets 
-##        "hrbrthemes"         "htmlTable"         "htmltools"       "htmlwidgets" 
-##            httpcode              httpuv                httr               httr2 
-##          "httpcode"            "httpuv"              "httr"             "httr2" 
-##                 ids              igraph                ineq               infer 
-##               "ids"            "igraph"              "ineq"             "infer" 
-##                 ini              inline             insight            installr 
-##               "ini"            "inline"           "insight"          "installr" 
-##               ipred             isoband           iterators             janitor 
-##             "ipred"           "isoband"         "iterators"           "janitor" 
-##                jpeg           jquerylib            jsonlite          juicyjuice 
-##              "jpeg"         "jquerylib"          "jsonlite"        "juicyjuice" 
-##          kableExtra                kknn               knitr            labeling 
-##        "kableExtra"              "kknn"             "knitr"          "labeling" 
-##      languageserver               later                lava            lazyeval 
-##    "languageserver"             "later"              "lava"          "lazyeval" 
-##             leaflet   leaflet.providers                 lhs           lifecycle 
-##           "leaflet" "leaflet.providers"               "lhs"         "lifecycle" 
-##               lintr             listenv            litedown                lme4 
-##             "lintr"           "listenv"          "litedown"              "lme4" 
-##                 loo             lpSolve           lubridate              maditr 
-##               "loo"           "lpSolve"         "lubridate"            "maditr" 
-##              magick            magrittr                maps            markdown 
-##            "magick"          "magrittr"              "maps"          "markdown" 
-##        MatrixModels         matrixStats             memoise      microbenchmark 
-##      "MatrixModels"       "matrixStats"           "memoise"    "microbenchmark" 
-##                mime              miniUI               minqa               minty 
-##              "mime"            "miniUI"             "minqa"             "minty" 
-##          modelbased           modeldata            modelenv              modelr 
-##        "modelbased"         "modeldata"          "modelenv"            "modelr" 
-##        modelsummary             munsell          naivebayes              ndjson 
-##      "modelsummary"           "munsell"        "naivebayes"            "ndjson" 
-##             netstat              nloptr            numDeriv             openssl 
-##           "netstat"            "nloptr"          "numDeriv"           "openssl" 
-##            openxlsx                 pak          parallelly          parameters 
-##          "openxlsx"               "pak"        "parallelly"        "parameters" 
-##             parsnip           patchwork            pbkrtest            pdftools 
-##           "parsnip"         "patchwork"          "pbkrtest"          "pdftools" 
-##         performance              pillar            pkgbuild           pkgconfig 
-##       "performance"            "pillar"          "pkgbuild"         "pkgconfig" 
-##             pkgdown             pkgload              plotly                plyr 
-##           "pkgdown"           "pkgload"            "plotly"              "plyr" 
-##                 png            polyclip           posterior              praise 
-##               "png"          "polyclip"         "posterior"            "praise" 
-##         prettyunits            processx             prodlim             profvis 
-##       "prettyunits"          "processx"           "prodlim"           "profvis" 
-##            progress           progressr               proj4            promises 
-##          "progress"         "progressr"             "proj4"          "promises" 
-##               proxy                  ps               purrr                qpdf 
-##             "proxy"                "ps"             "purrr"              "qpdf" 
-##                  qs            quadprog            quantreg            QuickJSR 
-##                "qs"          "quadprog"          "quantreg"          "QuickJSR" 
-##             R.cache         R.methodsS3                R.oo             R.utils 
-##           "R.cache"       "R.methodsS3"              "R.oo"           "R.utils" 
-##                  R6                ragg       RApiSerialize            rappdirs 
-##                "R6"              "ragg"     "RApiSerialize"          "rappdirs" 
-##              raster           rbibutils           rcmdcheck        RColorBrewer 
-##            "raster"         "rbibutils"         "rcmdcheck"      "RColorBrewer" 
-##                Rcpp       RcppArmadillo           RcppEigen        RcppParallel 
-##              "Rcpp"     "RcppArmadillo"         "RcppEigen"      "RcppParallel" 
-##               RCurl              Rdpack           reactable              reactR 
-##             "RCurl"            "Rdpack"         "reactable"            "reactR" 
-##             readODS               readr            readtext              readxl 
-##           "readODS"             "readr"          "readtext"            "readxl" 
-##                REAT             recipes          reformulas             reldist 
-##              "REAT"           "recipes"        "reformulas"           "reldist" 
-##             rematch            rematch2             remotes                renv 
-##           "rematch"          "rematch2"           "remotes"              "renv" 
-##              reprex                 rex                rhub               rJava 
-##            "reprex"               "rex"              "rhub"             "rJava" 
-##               rjson               rlang           rmarkdown                rosm 
-##             "rjson"             "rlang"         "rmarkdown"              "rosm" 
-##            roxygen2           rprojroot             rsample           RSelenium 
-##          "roxygen2"         "rprojroot"           "rsample"         "RSelenium" 
-##               rstan          rstantools          rstudioapi            Rttf2pt1 
-##             "rstan"        "rstantools"        "rstudioapi"          "Rttf2pt1" 
-##           rversions               rvest                  s2                sass 
-##         "rversions"             "rvest"                "s2"              "sass" 
-##              scales                 see             selectr           selenider 
-##            "scales"               "see"           "selectr"         "selenider" 
-##            selenium              semver               servr         sessioninfo 
-##          "selenium"            "semver"             "servr"       "sessioninfo" 
-##                  sf                 sfd              shades               shape 
-##                "sf"               "sfd"            "shades"             "shape" 
-##               shiny      shinydashboard        shinyWidgets              slider 
-##             "shiny"    "shinydashboard"      "shinyWidgets"            "slider" 
-##           snakecase         sourcetools                  sp             SparseM 
-##         "snakecase"       "sourcetools"                "sp"           "SparseM" 
-##             SQUAREM         StanHeaders             streamR          stringfish 
-##           "SQUAREM"       "StanHeaders"           "streamR"        "stringfish" 
-##             stringi             stringr            striprtf              styler 
-##           "stringi"           "stringr"          "striprtf"            "styler" 
-##             svglite                 sys         systemfonts              tables 
-##           "svglite"               "sys"       "systemfonts"            "tables" 
-##             tensorA               terra              testit            testthat 
-##           "tensorA"             "terra"            "testit"          "testthat" 
-##         textshaping              tibble          tidymodels               tidyr 
-##       "textshaping"            "tibble"        "tidymodels"             "tidyr" 
-##          tidyselect           tidyverse          timechange            timeDate 
-##        "tidyselect"         "tidyverse"        "timechange"          "timeDate" 
-##           tinytable             tinytex          transformr           triebeard 
-##         "tinytable"           "tinytex"        "transformr"         "triebeard" 
-##                tune              tweenr                tzdb               units 
-##              "tune"            "tweenr"              "tzdb"             "units" 
-##          urlchecker            urltools             usethis                utf8 
-##        "urlchecker"          "urltools"           "usethis"              "utf8" 
-##                uuid                  V8               vctrs             viridis 
-##              "uuid"                "V8"             "vctrs"           "viridis" 
-##         viridisLite               vroom               waldo                warp 
-##       "viridisLite"             "vroom"             "waldo"              "warp" 
-##               wdman             webshot           websocket         wesanderson 
-##             "wdman"           "webshot"         "websocket"       "wesanderson" 
-##             whisker              whoami               withr                  wk 
-##           "whisker"            "whoami"             "withr"                "wk" 
-##           workflows        workflowsets             writexl            WriteXLS 
-##         "workflows"      "workflowsets"           "writexl"          "WriteXLS" 
-##            xaringan       xaringanExtra      xaringanthemer                xfun 
-##          "xaringan"     "xaringanExtra"    "xaringanthemer"              "xfun" 
-##           XLConnect                xml2        xmlparsedata               xopen 
-##         "XLConnect"              "xml2"      "xmlparsedata"             "xopen" 
-##              xtable                yaml           yardstick                 zip 
-##            "xtable"              "yaml"         "yardstick"               "zip" 
-##                 zoo                base                boot               class 
-##               "zoo"              "base"              "boot"             "class" 
-##             cluster           codetools            compiler            datasets 
-##           "cluster"         "codetools"          "compiler"          "datasets" 
-##             foreign            graphics           grDevices                grid 
-##           "foreign"          "graphics"         "grDevices"              "grid" 
-##          KernSmooth             lattice                MASS              Matrix 
-##        "KernSmooth"           "lattice"              "MASS"            "Matrix" 
-##             methods                mgcv                nlme                nnet 
-##           "methods"              "mgcv"              "nlme"              "nnet" 
-##            parallel               rpart             spatial             splines 
-##          "parallel"             "rpart"           "spatial"           "splines" 
-##               stats              stats4            survival               tcltk 
-##             "stats"            "stats4"          "survival"             "tcltk" 
-##               tools        translations               utils 
-##             "tools"      "translations"             "utils"
+##                abind                 ACEP             antiword 
+##              "abind"               "ACEP"           "antiword" 
+##              arcenso                  ash          AsioHeaders 
+##            "arcenso"                "ash"        "AsioHeaders" 
+##              askpass           assertthat                   av 
+##            "askpass"         "assertthat"                 "av" 
+##            backports            base64enc           bayestestR 
+##          "backports"          "base64enc"         "bayestestR" 
+##                   BH                 bigD               binman 
+##                 "BH"               "bigD"             "binman" 
+##                  bit                bit64               bitops 
+##                "bit"              "bit64"             "bitops" 
+##                 blob             bookdown                 brew 
+##               "blob"           "bookdown"               "brew" 
+##                 brio                broom                bslib 
+##               "brio"              "broom"              "bslib" 
+##               cachem                callr                  car 
+##             "cachem"              "callr"                "car" 
+##              carData                cards                caret 
+##            "carData"              "cards"              "caret" 
+##              caTools           cellranger               chattr 
+##            "caTools"         "cellranger"             "chattr" 
+##            checkmate             chromote             classInt 
+##          "checkmate"           "chromote"           "classInt" 
+##                  cli                clipr                clock 
+##                "cli"              "clipr"              "clock" 
+##                 coda          collections           colorspace 
+##               "coda"        "collections"         "colorspace" 
+##           commonmark               config           conflicted 
+##         "commonmark"             "config"         "conflicted" 
+##                 coro          correlation             corrplot 
+##               "coro"        "correlation"           "corrplot" 
+##                 covr              cowplot                cpp11 
+##               "covr"            "cowplot"              "cpp11" 
+##               crayon          credentials            crosstalk 
+##             "crayon"        "credentials"          "crosstalk" 
+##                 crul                 curl            cyclocomp 
+##               "crul"               "curl"          "cyclocomp" 
+##           data.table           datawizard                  DBI 
+##         "data.table"         "datawizard"                "DBI" 
+##               dbplyr           dendextend         densEstBayes 
+##             "dbplyr"         "dendextend"       "densEstBayes" 
+##                Deriv                 desc             devtools 
+##              "Deriv"               "desc"           "devtools" 
+##              diagram                dials           DiceDesign 
+##            "diagram"              "dials"         "DiceDesign" 
+##              diffobj               digest              discrim 
+##            "diffobj"             "digest"            "discrim" 
+##       distributional                 doBy             doFuture 
+##     "distributional"               "doBy"           "doFuture" 
+##           doParallel              downlit                dplyr 
+##         "doParallel"            "downlit"              "dplyr" 
+##                   DT               dtplyr                e1071 
+##                 "DT"             "dtplyr"              "e1071" 
+##           effectsize              ellipse             ellipsis 
+##         "effectsize"            "ellipse"           "ellipsis" 
+##              emmeans                  eph         estimability 
+##            "emmeans"                "eph"       "estimability" 
+##             evaluate                expss            extrafont 
+##           "evaluate"              "expss"          "extrafont" 
+##          extrafontdb           factoextra           FactoMineR 
+##        "extrafontdb"         "factoextra"         "FactoMineR" 
+##                fansi               farver              fastmap 
+##              "fansi"             "farver"            "fastmap" 
+##            fastmatch           flashClust            flextable 
+##          "fastmatch"         "flashClust"          "flextable" 
+##            flipbookr          fontawesome    fontBitstreamVera 
+##          "flipbookr"        "fontawesome"  "fontBitstreamVera" 
+##       fontLiberation           fontquiver              forcats 
+##     "fontLiberation"         "fontquiver"            "forcats" 
+##              foreach          formattable              Formula 
+##            "foreach"        "formattable"            "Formula" 
+##                fresh                   fs                furrr 
+##              "fresh"                 "fs"              "furrr" 
+##               future         future.apply               gargle 
+##             "future"       "future.apply"             "gargle" 
+##              gdtools             generics                 gert 
+##            "gdtools"           "generics"               "gert" 
+##               gfonts               GGally                ggalt 
+##             "gfonts"             "GGally"              "ggalt" 
+##            gganimate             ggdendro               ggdist 
+##          "gganimate"           "ggdendro"             "ggdist" 
+##            ggeffects            ggfittext              ggforce 
+##          "ggeffects"          "ggfittext"            "ggforce" 
+##            ggfortify                ggmap              ggplot2 
+##          "ggfortify"              "ggmap"            "ggplot2" 
+##               ggpubr              ggrepel             ggridges 
+##             "ggpubr"            "ggrepel"           "ggridges" 
+##                ggsci             ggsignif            ggspatial 
+##              "ggsci"           "ggsignif"          "ggspatial" 
+##              ggstats               ggtext             ggthemes 
+##            "ggstats"             "ggtext"           "ggthemes" 
+##                   gh               gifski                 Gini 
+##                 "gh"             "gifski"               "Gini" 
+##             gitcreds               glmnet              globals 
+##           "gitcreds"             "glmnet"            "globals" 
+##                 glue          googledrive        googlesheets4 
+##               "glue"        "googledrive"      "googlesheets4" 
+##                gower                GPfit            gridExtra 
+##              "gower"              "GPfit"          "gridExtra" 
+##             gridtext                   gt               gtable 
+##           "gridtext"                 "gt"             "gtable" 
+##            gtsummary              hardhat                haven 
+##          "gtsummary"            "hardhat"              "haven" 
+##                 here                highr                  hms 
+##               "here"              "highr"                "hms" 
+##           hrbrthemes            htmlTable            htmltools 
+##         "hrbrthemes"          "htmlTable"          "htmltools" 
+##          htmlwidgets             httpcode               httpuv 
+##        "htmlwidgets"           "httpcode"             "httpuv" 
+##                 httr                httr2                  ids 
+##               "httr"              "httr2"                "ids" 
+##               igraph                 ineq                infer 
+##             "igraph"               "ineq"              "infer" 
+##                  ini               inline              insight 
+##                "ini"             "inline"            "insight" 
+##             installr                ipred              isoband 
+##           "installr"              "ipred"            "isoband" 
+##             ISOcodes            iterators          janeaustenr 
+##           "ISOcodes"          "iterators"        "janeaustenr" 
+##              janitor                 jpeg            jquerylib 
+##            "janitor"               "jpeg"          "jquerylib" 
+##             jsonlite           juicyjuice           kableExtra 
+##           "jsonlite"         "juicyjuice"         "kableExtra" 
+##                 kknn                knitr             labeling 
+##               "kknn"              "knitr"           "labeling" 
+##       languageserver                later            latex2exp 
+##     "languageserver"              "later"          "latex2exp" 
+##                 lava             lazyeval              leaflet 
+##               "lava"           "lazyeval"            "leaflet" 
+##    leaflet.providers                leaps                  lhs 
+##  "leaflet.providers"              "leaps"                "lhs" 
+##            lifecycle             lightgbm                lintr 
+##          "lifecycle"           "lightgbm"              "lintr" 
+##              listenv             litedown                 lme4 
+##            "listenv"           "litedown"               "lme4" 
+##                  loo              lpSolve            lubridate 
+##                "loo"            "lpSolve"          "lubridate" 
+##               maditr               magick             magrittr 
+##             "maditr"             "magick"           "magrittr" 
+##                 maps             markdown         MatrixModels 
+##               "maps"           "markdown"       "MatrixModels" 
+##          matrixStats              memoise       microbenchmark 
+##        "matrixStats"            "memoise"     "microbenchmark" 
+##                 mime               miniUI                minqa 
+##               "mime"             "miniUI"              "minqa" 
+##                minty              mitools           modelbased 
+##              "minty"            "mitools"         "modelbased" 
+##            modeldata             modelenv         ModelMetrics 
+##          "modeldata"           "modelenv"       "ModelMetrics" 
+##               modelr         modelsummary           modeltools 
+##             "modelr"       "modelsummary"         "modeltools" 
+##         multcompView              munsell              mvtnorm 
+##       "multcompView"            "munsell"            "mvtnorm" 
+##           naivebayes               ndjson              netstat 
+##         "naivebayes"             "ndjson"            "netstat" 
+##              network               nloptr                  NLP 
+##            "network"             "nloptr"                "NLP" 
+##             numDeriv              officer              openssl 
+##           "numDeriv"            "officer"            "openssl" 
+##             openxlsx                 otel              packrat 
+##           "openxlsx"               "otel"            "packrat" 
+##                  pak           parallelly           parameters 
+##                "pak"         "parallelly"         "parameters" 
+##              parsnip            patchwork             pbkrtest 
+##            "parsnip"          "patchwork"           "pbkrtest" 
+##             pdftools          performance               pillar 
+##           "pdftools"        "performance"             "pillar" 
+##             pkgbuild            pkgconfig              pkgdown 
+##           "pkgbuild"          "pkgconfig"            "pkgdown" 
+##              pkgload                  PKI               plotly 
+##            "pkgload"                "PKI"             "plotly" 
+##                 plyr                  png             polyclip 
+##               "plyr"                "png"           "polyclip" 
+##              polynom            posterior               praise 
+##            "polynom"          "posterior"             "praise" 
+##          prettyunits                 pROC             processx 
+##        "prettyunits"               "pROC"           "processx" 
+##              prodlim              profvis             progress 
+##            "prodlim"            "profvis"           "progress" 
+##            progressr                proj4             promises 
+##          "progressr"              "proj4"           "promises" 
+##                proxy                   ps                purrr 
+##              "proxy"                 "ps"              "purrr" 
+##                 qpdf                   qs             quadprog 
+##               "qpdf"                 "qs"           "quadprog" 
+##             quanteda   quanteda.textplots             quantreg 
+##           "quanteda" "quanteda.textplots"           "quantreg" 
+##             QuickJSR              R.cache          R.methodsS3 
+##           "QuickJSR"            "R.cache"        "R.methodsS3" 
+##                 R.oo              R.utils                   R6 
+##               "R.oo"            "R.utils"                 "R6" 
+##                 ragg         randomForest               ranger 
+##               "ragg"       "randomForest"             "ranger" 
+##                 RANN        RApiSerialize             rappdirs 
+##               "RANN"      "RApiSerialize"           "rappdirs" 
+##               raster            rbibutils            rcmdcheck 
+##             "raster"          "rbibutils"          "rcmdcheck" 
+##         RColorBrewer                 Rcpp        RcppArmadillo 
+##       "RColorBrewer"               "Rcpp"      "RcppArmadillo" 
+##            RcppEigen         RcppParallel             RcppTOML 
+##          "RcppEigen"       "RcppParallel"           "RcppTOML" 
+##                RCurl               Rdpack            reactable 
+##              "RCurl"             "Rdpack"          "reactable" 
+##               reactR              readODS                readr 
+##             "reactR"            "readODS"              "readr" 
+##             readtext               readxl                 REAT 
+##           "readtext"             "readxl"               "REAT" 
+##              recipes           reformulas              reldist 
+##            "recipes"         "reformulas"            "reldist" 
+##              rematch             rematch2              remotes 
+##            "rematch"           "rematch2"            "remotes" 
+##                 renv               reprex             reshape2 
+##               "renv"             "reprex"           "reshape2" 
+##           reticulate                  rex                 rhub 
+##         "reticulate"                "rex"               "rhub" 
+##                rJava                rjson                rlang 
+##              "rJava"              "rjson"              "rlang" 
+##            rmarkdown           rmdformats                 ROSE 
+##          "rmarkdown"         "rmdformats"               "ROSE" 
+##                 rosm             roxygen2            rprojroot 
+##               "rosm"           "roxygen2"          "rprojroot" 
+##              rsample            rsconnect            RSelenium 
+##            "rsample"          "rsconnect"          "RSelenium" 
+##                rstan           rstantools              rstatix 
+##              "rstan"         "rstantools"            "rstatix" 
+##           rstudioapi             Rttf2pt1                rules 
+##         "rstudioapi"           "Rttf2pt1"              "rules" 
+##            rversions                rvest                   s2 
+##          "rversions"              "rvest"                 "s2" 
+##                   S7             sampling                 sass 
+##                 "S7"           "sampling"               "sass" 
+##               scales        scatterplot3d                  see 
+##             "scales"      "scatterplot3d"                "see" 
+##              selectr            selenider             selenium 
+##            "selectr"          "selenider"           "selenium" 
+##               semver                servr          sessioninfo 
+##             "semver"              "servr"        "sessioninfo" 
+##                   sf                  sfd               shades 
+##                 "sf"                "sfd"             "shades" 
+##                shape                shiny       shinydashboard 
+##              "shape"              "shiny"     "shinydashboard" 
+##         shinyWidgets           sjlabelled               sjmisc 
+##       "shinyWidgets"         "sjlabelled"             "sjmisc" 
+##               sjPlot              sjstats                 slam 
+##             "sjPlot"            "sjstats"               "slam" 
+##               slider                  sna            snakecase 
+##             "slider"                "sna"          "snakecase" 
+##            SnowballC        snowflakeauth          sourcetools 
+##          "SnowballC"      "snowflakeauth"        "sourcetools" 
+##                   sp              SparseM          sparsevctrs 
+##                 "sp"            "SparseM"        "sparsevctrs" 
+##              SQUAREM          StanHeaders            stargazer 
+##            "SQUAREM"        "StanHeaders"          "stargazer" 
+##       statnet.common            stopwords              streamR 
+##     "statnet.common"          "stopwords"            "streamR" 
+##           stringfish              stringi              stringr 
+##         "stringfish"            "stringi"            "stringr" 
+##             striprtf               styler               survey 
+##           "striprtf"             "styler"             "survey" 
+##              svglite                  sys          systemfonts 
+##            "svglite"                "sys"        "systemfonts" 
+##               tables              tensorA                terra 
+##             "tables"            "tensorA"              "terra" 
+##               testit             testthat          textshaping 
+##             "testit"           "testthat"        "textshaping" 
+##               themis               tibble               tictoc 
+##             "themis"             "tibble"             "tictoc" 
+##           tidymodels                tidyr           tidyselect 
+##         "tidymodels"              "tidyr"         "tidyselect" 
+##             tidytext            tidyverse           timechange 
+##           "tidytext"          "tidyverse"         "timechange" 
+##             timeDate            tinytable              tinytex 
+##           "timeDate"          "tinytable"            "tinytex" 
+##                   tm           tokenizers          topicmodels 
+##                 "tm"         "tokenizers"        "topicmodels" 
+##           transformr            triebeard                 tune 
+##         "transformr"          "triebeard"               "tune" 
+##               tweenr                 tzdb                units 
+##             "tweenr"               "tzdb"              "units" 
+##           urlchecker             urltools              usethis 
+##         "urlchecker"           "urltools"            "usethis" 
+##                 utf8                 uuid                   V8 
+##               "utf8"               "uuid"                 "V8" 
+##                vctrs                  vip              viridis 
+##              "vctrs"                "vip"            "viridis" 
+##          viridisLite                vroom                waldo 
+##        "viridisLite"              "vroom"              "waldo" 
+##                 warp                wdman              webshot 
+##               "warp"              "wdman"            "webshot" 
+##             webshot2            websocket          wesanderson 
+##           "webshot2"          "websocket"        "wesanderson" 
+##              whisker               whoami                withr 
+##            "whisker"             "whoami"              "withr" 
+##                   wk            wordcloud            workflows 
+##                 "wk"          "wordcloud"          "workflows" 
+##         workflowsets              writexl             WriteXLS 
+##       "workflowsets"            "writexl"           "WriteXLS" 
+##             xaringan        xaringanExtra       xaringanthemer 
+##           "xaringan"      "xaringanExtra"     "xaringanthemer" 
+##                 xfun              xgboost            XLConnect 
+##               "xfun"            "xgboost"          "XLConnect" 
+##                 xml2         xmlparsedata                xopen 
+##               "xml2"       "xmlparsedata"              "xopen" 
+##               xtable                 yaml            yardstick 
+##             "xtable"               "yaml"          "yardstick" 
+##                  zip                  zoo                 base 
+##                "zip"                "zoo"               "base" 
+##                 boot                class              cluster 
+##               "boot"              "class"            "cluster" 
+##            codetools             compiler             datasets 
+##          "codetools"           "compiler"           "datasets" 
+##              foreign             graphics            grDevices 
+##            "foreign"           "graphics"          "grDevices" 
+##                 grid           KernSmooth              lattice 
+##               "grid"         "KernSmooth"            "lattice" 
+##                 MASS               Matrix              methods 
+##               "MASS"             "Matrix"            "methods" 
+##                 mgcv                 nlme                 nnet 
+##               "mgcv"               "nlme"               "nnet" 
+##             parallel                rpart              spatial 
+##           "parallel"              "rpart"            "spatial" 
+##              splines                stats               stats4 
+##            "splines"              "stats"             "stats4" 
+##             survival                tcltk                tools 
+##           "survival"              "tcltk"              "tools" 
+##         translations                utils 
+##       "translations"              "utils"
 ```
 
 # Parte 2: ¿Qué es el paquete `{eph}`?
@@ -383,7 +504,7 @@ dim(eph_data)
 ```
 
 ```
-## [1] 47337   177
+## [1] 47337   235
 ```
 
 ``` r
@@ -391,16 +512,16 @@ head(eph_data)
 ```
 
 ```
-## # A tibble: 6 × 177
+## # A tibble: 6 × 235
 ##   CODUSU     ANO4 TRIMESTRE NRO_HOGAR COMPONENTE   H15 REGION MAS_500 AGLOMERADO
 ##   <chr>     <int>     <int>     <int>      <int> <int>  <int> <chr>        <int>
-## 1 TQRMNOSU…  2023         4         1          1     1     41 N                7
-## 2 TQRMNOSU…  2023         4         1          2     1     41 N                7
-## 3 TQRMNOTX…  2023         4         1          1     1     44 N               17
-## 4 TQRMNOTX…  2023         4         1          2     1     44 N               17
-## 5 TQRMNOTX…  2023         4         1          3     0     44 N               17
-## 6 TQRMNORV…  2023         4         1          2     1     44 N               17
-## # ℹ 168 more variables: PONDERA <int>, CH03 <int>, CH04 <int>, CH05 <chr>,
+## 1 TQRMNOTR…  2023         4         1          1     1      1 S               33
+## 2 TQRMNOUS…  2023         4         1          1     1      1 S               33
+## 3 TQRMNORT…  2023         4         1          1     1      1 S               33
+## 4 TQRMNOQY…  2023         4         1          1     1      1 S               33
+## 5 TQRMNOSQ…  2023         4         1          2     1     40 N               22
+## 6 TQRMNORS…  2023         4         1          1     1     40 N               22
+## # ℹ 226 more variables: PONDERA <int>, CH03 <int>, CH04 <int>, CH05 <chr>,
 ## #   CH06 <int>, CH07 <int>, CH08 <int>, CH09 <int>, CH10 <int>, CH11 <int>,
 ## #   CH12 <int>, CH13 <int>, CH14 <chr>, CH15 <int>, CH15_COD <int>, CH16 <int>,
 ## #   CH16_COD <int>, NIVEL_ED <int>, ESTADO <int>, CAT_OCUP <int>,
@@ -446,13 +567,24 @@ colnames(eph_data)  # Nombres de las variables
 ## [131] "PP11S"      "PP11T"      "P21"        "DECOCUR"    "IDECOCUR"  
 ## [136] "RDECOCUR"   "GDECOCUR"   "PDECOCUR"   "ADECOCUR"   "PONDIIO"   
 ## [141] "TOT_P12"    "P47T"       "DECINDR"    "IDECINDR"   "RDECINDR"  
-## [146] "GDECINDR"   "PDECINDR"   "ADECINDR"   "PONDII"     "V2_M"      
-## [151] "V3_M"       "V4_M"       "V5_M"       "V8_M"       "V9_M"      
-## [156] "V10_M"      "V11_M"      "V12_M"      "V18_M"      "V19_AM"    
-## [161] "V21_M"      "T_VI"       "ITF"        "DECIFR"     "IDECIFR"   
-## [166] "RDECIFR"    "GDECIFR"    "PDECIFR"    "ADECIFR"    "IPCF"      
-## [171] "DECCFR"     "IDECCFR"    "RDECCFR"    "GDECCFR"    "PDECCFR"   
-## [176] "ADECCFR"    "PONDIH"
+## [146] "GDECINDR"   "PDECINDR"   "ADECINDR"   "PONDII"     "V3_M"      
+## [151] "V4_M"       "V8_M"       "V9_M"       "V10_M"      "V12_M"     
+## [156] "V18_M"      "V19_AM"     "T_VI"       "ITF"        "DECIFR"    
+## [161] "IDECIFR"    "RDECIFR"    "GDECIFR"    "PDECIFR"    "ADECIFR"   
+## [166] "IPCF"       "DECCFR"     "IDECCFR"    "RDECCFR"    "GDECCFR"   
+## [171] "PDECCFR"    "ADECCFR"    "PONDIH"     "V2_02_M"    "V2_03_M"   
+## [176] "V5_03_M"    "V11_02_M"   "PP07B1_01"  "EMPLEO"     "SECTOR"    
+## [181] "PP02A"      "PP02B"      "PP02D"      "PP02F"      "PP02G"     
+## [186] "PP03K"      "PP04A1"     "PP05B3"     "PP05I"      "PP05J"     
+## [191] "PP05K"      "PP06E1"     "PP06K"      "PP06K_SEM"  "PP06K_MES" 
+## [196] "PP06L"      "PP07F1_1"   "PP07F1_2"   "PP07F1_3"   "PP07I2"    
+## [201] "PP07I3"     "PP07I4"     "PP07L"      "PP07M"      "PP08G"     
+## [206] "PP08G_DSEM" "PP08G_DMES" "PP08H"      "PP10B1"     "PP10B2"    
+## [211] "PP10B3"     "PP10B4"     "PP10B5"     "PP10B6"     "PP10B7"    
+## [216] "PP10B8"     "PP10B9"     "PP10B10"    "PP11L2"     "V2_01_M"   
+## [221] "V5_01_M"    "V5_02_M"    "V11_01_M"   "V21_01_M"   "V21_02_M"  
+## [226] "V21_03_M"   "V22_01_M"   "V22_02_M"   "V22_03_M"   "P_DECCF"   
+## [231] "P_RDECCF"   "P_GDECCF"   "P_PDECCF"   "P_IDECCF"   "P_ADECCF"
 ```
 
 ``` r
@@ -460,37 +592,37 @@ str(eph_data)       # Estructura de la base
 ```
 
 ```
-## tibble [47,337 × 177] (S3: tbl_df/tbl/data.frame)
-##  $ CODUSU    : chr [1:47337] "TQRMNOSUWHLMKQCDEFNFF00852219" "TQRMNOSUWHLMKQCDEFNFF00852219" "TQRMNOTXQHKOLMCDEGNFJ00794590" "TQRMNOTXQHKOLMCDEGNFJ00794590" ...
+## tibble [47,337 × 235] (S3: tbl_df/tbl/data.frame)
+##  $ CODUSU    : chr [1:47337] "TQRMNOTRSHMMNLCDEIJAH00812769" "TQRMNOUSPHKNKOCDEIJAH00797686" "TQRMNORTTHMLPOCDEIJAH00812580" "TQRMNOQYPHLMLTCDEIJAH00854995" ...
 ##  $ ANO4      : int [1:47337] 2023 2023 2023 2023 2023 2023 2023 2023 2023 2023 ...
 ##  $ TRIMESTRE : int [1:47337] 4 4 4 4 4 4 4 4 4 4 ...
 ##  $ NRO_HOGAR : int [1:47337] 1 1 1 1 1 1 1 1 1 1 ...
-##  $ COMPONENTE: int [1:47337] 1 2 1 2 3 2 3 1 2 1 ...
-##  $ H15       : int [1:47337] 1 1 1 1 0 1 1 1 1 1 ...
-##  $ REGION    : int [1:47337] 41 41 44 44 44 44 44 44 44 44 ...
-##  $ MAS_500   : chr [1:47337] "N" "N" "N" "N" ...
-##  $ AGLOMERADO: int [1:47337] 7 7 17 17 17 17 17 17 17 93 ...
-##  $ PONDERA   : int [1:47337] 370 370 281 281 281 165 165 168 168 85 ...
-##  $ CH03      : int [1:47337] 1 2 1 2 3 1 3 1 2 1 ...
-##  $ CH04      : int [1:47337] 1 2 1 2 2 2 2 1 2 1 ...
-##  $ CH05      : chr [1:47337] "28/08/1963" "26/02/1971" "26/08/1989" "30/01/1991" ...
-##  $ CH06      : int [1:47337] 60 52 34 32 6 77 43 74 87 47 ...
-##  $ CH07      : int [1:47337] 2 2 1 1 5 4 5 2 2 2 ...
-##  $ CH08      : int [1:47337] 1 1 1 1 1 1 1 1 1 4 ...
+##  $ COMPONENTE: int [1:47337] 1 1 1 1 2 1 2 1 1 2 ...
+##  $ H15       : int [1:47337] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ REGION    : int [1:47337] 1 1 1 1 40 40 40 1 43 41 ...
+##  $ MAS_500   : chr [1:47337] "S" "S" "S" "S" ...
+##  $ AGLOMERADO: int [1:47337] 33 33 33 33 22 22 22 33 13 8 ...
+##  $ PONDERA   : int [1:47337] 826 3103 2852 1151 105 124 166 916 2145 182 ...
+##  $ CH03      : int [1:47337] 1 1 1 1 8 1 2 1 1 3 ...
+##  $ CH04      : int [1:47337] 2 2 1 1 1 1 1 1 1 1 ...
+##  $ CH05      : chr [1:47337] "18/04/1969" "19/04/1998" "09/12/1991" "23/08/1972" ...
+##  $ CH06      : int [1:47337] 54 25 31 51 34 57 24 60 55 29 ...
+##  $ CH07      : int [1:47337] 3 5 3 2 5 5 1 2 3 1 ...
+##  $ CH08      : int [1:47337] 1 1 1 1 4 4 4 4 1 4 ...
 ##  $ CH09      : int [1:47337] 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ CH10      : int [1:47337] 2 2 2 2 1 2 2 2 2 2 ...
 ##  $ CH11      : int [1:47337] 0 0 0 0 1 0 0 0 0 0 ...
-##  $ CH12      : int [1:47337] 7 4 4 4 2 2 4 2 2 2 ...
-##  $ CH13      : int [1:47337] 1 1 1 1 2 2 1 1 1 1 ...
-##  $ CH14      : chr [1:47337] "" "" "" "" ...
-##  $ CH15      : int [1:47337] 1 1 1 1 1 4 1 2 2 1 ...
-##  $ CH15_COD  : int [1:47337] NA NA NA NA NA 208 NA NA NA NA ...
+##  $ CH12      : int [1:47337] 7 4 4 4 6 2 4 4 4 4 ...
+##  $ CH13      : int [1:47337] 2 1 1 1 2 1 2 1 2 2 ...
+##  $ CH14      : chr [1:47337] "2" "" "" "" ...
+##  $ CH15      : int [1:47337] 1 1 1 1 1 1 1 4 1 1 ...
+##  $ CH15_COD  : int [1:47337] NA NA NA NA NA NA NA 202 NA NA ...
 ##  $ CH16      : int [1:47337] 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ CH16_COD  : int [1:47337] NA NA NA NA NA NA NA NA NA NA ...
-##  $ NIVEL_ED  : int [1:47337] 6 4 4 4 1 1 4 2 2 2 ...
-##  $ ESTADO    : int [1:47337] 1 3 1 1 4 3 1 3 3 1 ...
-##  $ CAT_OCUP  : int [1:47337] 3 0 3 3 0 0 3 0 0 2 ...
-##  $ CAT_INAC  : int [1:47337] 0 4 0 0 3 4 0 1 1 0 ...
+##  $ NIVEL_ED  : int [1:47337] 5 4 4 4 5 2 3 4 3 3 ...
+##  $ ESTADO    : int [1:47337] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ CAT_OCUP  : int [1:47337] 3 3 3 3 3 3 3 3 3 3 ...
+##  $ CAT_INAC  : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
 ##  $ IMPUTA    : int [1:47337] NA NA NA NA NA NA NA NA NA NA ...
 ##  $ PP02C1    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
 ##  $ PP02C2    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
@@ -501,65 +633,65 @@ str(eph_data)       # Estructura de la base
 ##  $ PP02C7    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
 ##  $ PP02C8    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
 ##  $ PP02E     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
-##  $ PP02H     : int [1:47337] 0 2 0 0 0 2 0 2 2 0 ...
-##  $ PP02I     : int [1:47337] 0 2 0 0 0 2 0 2 2 0 ...
-##  $ PP03C     : int [1:47337] 0 NA 1 1 NA NA 1 NA NA 1 ...
-##  $ PP03D     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP3E_TOT  : int [1:47337] 0 NA 36 15 NA NA 48 NA NA 60 ...
-##  $ PP3F_TOT  : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP03G     : int [1:47337] 2 NA 1 2 NA NA 2 NA NA 2 ...
-##  $ PP03H     : int [1:47337] 0 NA 1 0 NA NA 0 NA NA 0 ...
-##  $ PP03I     : int [1:47337] 2 NA 1 2 NA NA 2 NA NA 2 ...
-##  $ PP03J     : int [1:47337] 2 NA 1 2 NA NA 2 NA NA 2 ...
-##  $ INTENSI   : int [1:47337] 4 NA 2 2 NA NA 3 NA NA 3 ...
-##  $ PP04A     : int [1:47337] 1 NA 1 2 NA NA 2 NA NA 2 ...
-##  $ PP04B_COD : chr [1:47337] "8401" "" "8401" "9700" ...
-##  $ PP04B1    : int [1:47337] 2 NA 2 1 NA NA 2 NA NA 2 ...
-##  $ PP04B2    : int [1:47337] 0 NA 0 1 NA NA 0 NA NA 0 ...
-##  $ PP04B3_MES: int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP04B3_ANO: int [1:47337] 0 NA 0 1 NA NA 0 NA NA 0 ...
-##  $ PP04B3_DIA: int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP04C     : int [1:47337] 9 NA 7 0 NA NA 5 NA NA 1 ...
-##  $ PP04C99   : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP04D_COD : chr [1:47337] "11333" "" "48323" "55314" ...
-##  $ PP04G     : int [1:47337] 1 NA 1 0 NA NA 1 NA NA 8 ...
-##  $ PP05B2_MES: int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP05B2_ANO: int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP05B2_DIA: int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP05C_1   : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 1 ...
-##  $ PP05C_2   : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 3 ...
-##  $ PP05C_3   : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 1 ...
-##  $ PP05E     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 2 ...
-##  $ PP05F     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 7 ...
-##  $ PP05H     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 3 ...
-##  $ PP06A     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 2 ...
-##  $ PP06C     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 400000 ...
-##  $ PP06D     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP06E     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP06H     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP07A     : int [1:47337] 6 NA 6 0 NA NA 6 NA NA 0 ...
-##  $ PP07C     : int [1:47337] 2 NA 2 0 NA NA 2 NA NA 0 ...
-##  $ PP07D     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP07E     : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP07F1    : int [1:47337] 2 NA 2 2 NA NA 2 NA NA 0 ...
-##  $ PP07F2    : int [1:47337] 2 NA 2 2 NA NA 2 NA NA 0 ...
-##  $ PP07F3    : int [1:47337] 2 NA 2 2 NA NA 2 NA NA 0 ...
-##  $ PP07F4    : int [1:47337] 2 NA 2 2 NA NA 2 NA NA 0 ...
-##  $ PP07F5    : int [1:47337] 5 NA 5 5 NA NA 5 NA NA 0 ...
-##  $ PP07G1    : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP07G2    : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP07G3    : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP07G4    : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP07G_59  : int [1:47337] 0 NA 0 5 NA NA 0 NA NA 0 ...
-##  $ PP07H     : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP07I     : int [1:47337] 0 NA 0 2 NA NA 0 NA NA 0 ...
-##  $ PP07J     : int [1:47337] 1 NA 3 1 NA NA 1 NA NA 0 ...
-##  $ PP07K     : int [1:47337] 1 NA 1 2 NA NA 1 NA NA 0 ...
-##  $ PP08D1    : int [1:47337] -9 NA 450000 200000 NA NA -9 NA NA 0 ...
-##  $ PP08D4    : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP08F1    : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP08F2    : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
-##  $ PP08J1    : int [1:47337] 0 NA 0 0 NA NA 0 NA NA 0 ...
+##  $ PP02H     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP02I     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP03C     : int [1:47337] 1 1 1 2 2 1 2 1 1 1 ...
+##  $ PP03D     : int [1:47337] 0 0 0 2 2 0 2 0 0 0 ...
+##  $ PP3E_TOT  : int [1:47337] 36 16 44 35 20 40 24 16 40 60 ...
+##  $ PP3F_TOT  : int [1:47337] 0 0 0 10 10 0 24 0 0 0 ...
+##  $ PP03G     : int [1:47337] 2 2 2 2 2 2 2 2 1 2 ...
+##  $ PP03H     : int [1:47337] 0 0 0 0 0 0 0 0 1 0 ...
+##  $ PP03I     : int [1:47337] 2 2 2 2 2 1 2 2 1 1 ...
+##  $ PP03J     : int [1:47337] 2 2 2 2 2 1 2 2 2 1 ...
+##  $ INTENSI   : int [1:47337] 2 2 2 2 2 2 3 2 2 3 ...
+##  $ PP04A     : int [1:47337] 2 1 2 1 2 2 2 2 2 2 ...
+##  $ PP04B_COD : chr [1:47337] "2009" "8101" "2301" "8401" ...
+##  $ PP04B1    : int [1:47337] 2 2 2 2 1 2 2 2 2 2 ...
+##  $ PP04B2    : int [1:47337] 0 0 0 0 1 0 0 0 0 0 ...
+##  $ PP04B3_MES: int [1:47337] 0 0 0 0 6 0 0 0 0 0 ...
+##  $ PP04B3_ANO: int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP04B3_DIA: int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP04C     : int [1:47337] 7 7 8 11 0 5 9 3 11 99 ...
+##  $ PP04C99   : int [1:47337] 0 0 0 0 0 0 0 0 0 9 ...
+##  $ PP04D_COD : chr [1:47337] "10333" "56314" "30333" "41332" ...
+##  $ PP04G     : int [1:47337] 11 9 11 11 0 5 5 8 11 11 ...
+##  $ PP05B2_MES: int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05B2_ANO: int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05B2_DIA: int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05C_1   : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05C_2   : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05C_3   : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05E     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05F     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP05H     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP06A     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP06C     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP06D     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP06E     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP06H     : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP07A     : int [1:47337] 5 6 6 6 0 9 6 6 6 5 ...
+##  $ PP07C     : int [1:47337] 2 9 2 2 0 1 9 1 2 1 ...
+##  $ PP07D     : int [1:47337] 0 9 0 0 0 9 9 9 0 9 ...
+##  $ PP07E     : int [1:47337] 0 4 0 0 0 4 4 4 0 4 ...
+##  $ PP07F1    : int [1:47337] 2 2 1 2 2 2 2 2 2 2 ...
+##  $ PP07F2    : int [1:47337] 2 2 2 2 2 2 2 2 2 2 ...
+##  $ PP07F3    : int [1:47337] 2 2 2 2 2 2 2 2 1 2 ...
+##  $ PP07F4    : int [1:47337] 2 2 2 2 2 2 2 2 1 2 ...
+##  $ PP07F5    : int [1:47337] 5 5 0 5 5 5 5 5 0 5 ...
+##  $ PP07G1    : int [1:47337] 1 2 1 1 2 2 2 2 1 2 ...
+##  $ PP07G2    : int [1:47337] 1 2 1 1 2 2 2 2 1 2 ...
+##  $ PP07G3    : int [1:47337] 1 2 1 1 2 2 2 2 1 2 ...
+##  $ PP07G4    : int [1:47337] 1 1 1 1 2 2 2 2 1 2 ...
+##  $ PP07G_59  : int [1:47337] 0 0 0 0 5 5 5 5 0 5 ...
+##  $ PP07H     : int [1:47337] 1 2 1 1 2 2 2 2 1 2 ...
+##  $ PP07I     : int [1:47337] 0 1 0 0 2 2 2 2 0 2 ...
+##  $ PP07J     : int [1:47337] 1 1 1 1 1 1 1 1 3 1 ...
+##  $ PP07K     : int [1:47337] 1 3 1 1 4 4 4 4 1 4 ...
+##  $ PP08D1    : int [1:47337] 300000 64000 265000 500000 22000 90000 120000 -9 400000 -9 ...
+##  $ PP08D4    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP08F1    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP08F2    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ PP08J1    : int [1:47337] 0 0 0 0 0 0 0 0 0 0 ...
 ##   [list output truncated]
 ```
 
@@ -582,12 +714,12 @@ head(eph_data[c("CH04", "ESTADO", "CAT_OCUP")])  # Antes de aplicar organize_lab
 ## # A tibble: 6 × 3
 ##    CH04 ESTADO CAT_OCUP
 ##   <int>  <int>    <int>
-## 1     1      1        3
-## 2     2      3        0
+## 1     2      1        3
+## 2     2      1        3
 ## 3     1      1        3
-## 4     2      1        3
-## 5     2      4        0
-## 6     2      3        0
+## 4     1      1        3
+## 5     1      1        3
+## 6     1      1        3
 ```
 
 ``` r
@@ -598,12 +730,12 @@ head(eph_data_labeled[c("CH04", "ESTADO", "CAT_OCUP")])  # Después de aplicar o
 ## # A tibble: 6 × 3
 ##   CH04       ESTADO     CAT_OCUP  
 ##   <labelled> <labelled> <labelled>
-## 1 1          1          3         
-## 2 2          3          0         
+## 1 2          1          3         
+## 2 2          1          3         
 ## 3 1          1          3         
-## 4 2          1          3         
-## 5 2          4          0         
-## 6 2          3          0
+## 4 1          1          3         
+## 5 1          1          3         
+## 6 1          1          3
 ```
 
 ## Explicación:
@@ -746,11 +878,11 @@ summary(eph_data_labeled)
 ##  NA's   :26025    NA's   :26025    NA's   :26025   NA's   :26025  
 ##   PP04D_COD             PP04G          PP05B2_MES      PP05B2_ANO    
 ##  Length:47337       Min.   : 0.000   Min.   :0.000   Min.   : 0.000  
-##  Class1:labelled    1st Qu.: 1.000   1st Qu.:0.000   1st Qu.: 0.000  
-##  Class2:character   Median : 1.000   Median :0.000   Median : 0.000  
-##  Mode  :character   Mean   : 2.607   Mean   :0.005   Mean   : 0.017  
-##                     3rd Qu.: 4.000   3rd Qu.:0.000   3rd Qu.: 0.000  
-##                     Max.   :10.000   Max.   :8.000   Max.   :23.000  
+##  Class1:labelled    1st Qu.: 8.000   1st Qu.:0.000   1st Qu.: 0.000  
+##  Class2:character   Median :11.000   Median :0.000   Median : 0.000  
+##  Mode  :character   Mean   : 8.964   Mean   :0.005   Mean   : 0.017  
+##                     3rd Qu.:11.000   3rd Qu.:0.000   3rd Qu.: 0.000  
+##                     Max.   :13.000   Max.   :8.000   Max.   :23.000  
 ##                     NA's   :26025    NA's   :26025   NA's   :26025   
 ##    PP05B2_DIA       PP05C_1         PP05C_2         PP05C_3     
 ##  Min.   :0e+00   Min.   :0.000   Min.   :0.000   Min.   :0.000  
@@ -780,7 +912,7 @@ summary(eph_data_labeled)
 ##  Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
 ##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
 ##  Median :5.000   Median :2.000   Median :0.000   Median :0.000  
-##  Mean   :3.481   Mean   :1.646   Mean   :0.975   Mean   :0.465  
+##  Mean   :3.481   Mean   :1.646   Mean   :0.975   Mean   :0.524  
 ##  3rd Qu.:6.000   3rd Qu.:2.000   3rd Qu.:0.000   3rd Qu.:0.000  
 ##  Max.   :9.000   Max.   :9.000   Max.   :9.000   Max.   :4.000  
 ##  NA's   :26025   NA's   :26025   NA's   :26025   NA's   :26025  
@@ -920,38 +1052,30 @@ summary(eph_data_labeled)
 ##                                                                             
 ##                                                                             
 ##                                                                             
-##      PONDII             V2_M              V3_M              V4_M          
-##  Min.   :    0.0   Min.   :     -9   Min.   :     -9   Min.   :    -9.00  
-##  1st Qu.:  147.0   1st Qu.:      0   1st Qu.:      0   1st Qu.:     0.00  
-##  Median :  290.0   Median :      0   Median :      0   Median :     0.00  
-##  Mean   :  623.8   Mean   :  25067   Mean   :    924   Mean   :    65.21  
-##  3rd Qu.:  613.0   3rd Qu.:      0   3rd Qu.:      0   3rd Qu.:     0.00  
-##  Max.   :11903.0   Max.   :4000000   Max.   :7000000   Max.   :246000.00  
-##                                                                           
-##       V5_M             V8_M                V9_M               V10_M        
-##  Min.   :    -9   Min.   :     -9.0   Min.   :     -9.0   Min.   :     -9  
-##  1st Qu.:     0   1st Qu.:      0.0   1st Qu.:      0.0   1st Qu.:      0  
-##  Median :     0   Median :      0.0   Median :      0.0   Median :      0  
-##  Mean   :  2741   Mean   :    962.6   Mean   :    202.7   Mean   :    725  
-##  3rd Qu.:     0   3rd Qu.:      0.0   3rd Qu.:      0.0   3rd Qu.:      0  
-##  Max.   :300000   Max.   :1200000.0   Max.   :2000000.0   Max.   :3000000  
+##      PONDII             V3_M              V4_M                V8_M          
+##  Min.   :    0.0   Min.   :     -9   Min.   :    -9.00   Min.   :     -9.0  
+##  1st Qu.:  147.0   1st Qu.:      0   1st Qu.:     0.00   1st Qu.:      0.0  
+##  Median :  290.0   Median :      0   Median :     0.00   Median :      0.0  
+##  Mean   :  623.8   Mean   :    924   Mean   :    65.21   Mean   :    962.6  
+##  3rd Qu.:  613.0   3rd Qu.:      0   3rd Qu.:     0.00   3rd Qu.:      0.0  
+##  Max.   :11903.0   Max.   :7000000   Max.   :246000.00   Max.   :1200000.0  
+##                                                                             
+##       V9_M               V10_M             V12_M             V18_M         
+##  Min.   :     -9.0   Min.   :     -9   Min.   :     -9   Min.   :      -9  
+##  1st Qu.:      0.0   1st Qu.:      0   1st Qu.:      0   1st Qu.:       0  
+##  Median :      0.0   Median :      0   Median :      0   Median :       0  
+##  Mean   :    202.7   Mean   :    725   Mean   :   2140   Mean   :    2246  
+##  3rd Qu.:      0.0   3rd Qu.:      0   3rd Qu.:      0   3rd Qu.:       0  
+##  Max.   :2000000.0   Max.   :3000000   Max.   :1468000   Max.   :99000000  
 ##                                                                            
-##      V11_M              V12_M             V18_M              V19_AM 
-##  Min.   :    -9.0   Min.   :     -9   Min.   :      -9   Min.   :0  
-##  1st Qu.:     0.0   1st Qu.:      0   1st Qu.:       0   1st Qu.:0  
-##  Median :     0.0   Median :      0   Median :       0   Median :0  
-##  Mean   :   433.5   Mean   :   2140   Mean   :    2246   Mean   :0  
-##  3rd Qu.:     0.0   3rd Qu.:      0   3rd Qu.:       0   3rd Qu.:0  
-##  Max.   :300000.0   Max.   :1468000   Max.   :99000000   Max.   :0  
-##                                                                     
-##      V21_M               T_VI                ITF               DECIFR         
-##  Min.   :    -9.0   Min.   :       -9   Min.   :        0   Length:47337      
-##  1st Qu.:     0.0   1st Qu.:        0   1st Qu.:    30000   Class1:labelled   
-##  Median :     0.0   Median :        0   Median :   272000   Class2:character  
-##  Mean   :   192.5   Mean   :    36009   Mean   :   339492   Mode  :character  
-##  3rd Qu.:     0.0   3rd Qu.:    13000   3rd Qu.:   480000                     
-##  Max.   :350000.0   Max.   :101250000   Max.   :101250000                     
-##                                                                               
+##      V19_AM       T_VI                ITF               DECIFR         
+##  Min.   :0   Min.   :       -9   Min.   :        0   Length:47337      
+##  1st Qu.:0   1st Qu.:        0   1st Qu.:    30000   Class1:labelled   
+##  Median :0   Median :        0   Median :   272000   Class2:character  
+##  Mean   :0   Mean   :    36009   Mean   :   339492   Mode  :character  
+##  3rd Qu.:0   3rd Qu.:    13000   3rd Qu.:   480000                     
+##  Max.   :0   Max.   :101250000   Max.   :101250000                     
+##                                                                        
 ##    IDECIFR            RDECIFR            GDECIFR            PDECIFR         
 ##  Length:47337       Length:47337       Length:47337       Length:47337      
 ##  Class1:labelled    Class1:labelled    Class1:labelled    Class1:labelled   
@@ -976,14 +1100,134 @@ summary(eph_data_labeled)
 ##                                                                             
 ##                                                                             
 ##                                                                             
-##      PONDIH       
-##  Min.   :    0.0  
-##  1st Qu.:   53.0  
-##  Median :  245.0  
-##  Mean   :  623.8  
-##  3rd Qu.:  549.0  
-##  Max.   :16756.0  
-## 
+##      PONDIH           V2_02_M          V2_03_M          V5_03_M        
+##  Min.   :    0.0   Min.   :    -9   Min.   :    -9   Min.   :   -9.00  
+##  1st Qu.:   53.0   1st Qu.:     0   1st Qu.:     0   1st Qu.:    0.00  
+##  Median :  245.0   Median :     0   Median :     0   Median :    0.00  
+##  Mean   :  623.8   Mean   :  3871   Mean   :  2364   Mean   :    9.91  
+##  3rd Qu.:  549.0   3rd Qu.:     0   3rd Qu.:     0   3rd Qu.:    0.00  
+##  Max.   :16756.0   Max.   :810000   Max.   :400000   Max.   :70000.00  
+##                                                                        
+##     V11_02_M           PP07B1_01         EMPLEO          SECTOR     
+##  Min.   :    -9.00   Min.   :0.000   Min.   :1.000   Min.   :1.000  
+##  1st Qu.:     0.00   1st Qu.:0.000   1st Qu.:1.000   1st Qu.:1.000  
+##  Median :     0.00   Median :2.000   Median :1.000   Median :1.000  
+##  Mean   :    46.23   Mean   :1.327   Mean   :1.445   Mean   :1.627  
+##  3rd Qu.:     0.00   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000  
+##  Max.   :210000.00   Max.   :9.000   Max.   :9.000   Max.   :9.000  
+##                      NA's   :26025   NA's   :26025   NA's   :26025  
+##      PP02A             PP02B             PP02D              PP02F       
+##  Min.   :0.00000   Min.   :0.00000   Min.   :0.000000   Min.   :0.0000  
+##  1st Qu.:0.00000   1st Qu.:0.00000   1st Qu.:0.000000   1st Qu.:0.0000  
+##  Median :0.00000   Median :0.00000   Median :0.000000   Median :0.0000  
+##  Mean   :0.03207   Mean   :0.02808   Mean   :0.007013   Mean   :0.7979  
+##  3rd Qu.:0.00000   3rd Qu.:0.00000   3rd Qu.:0.000000   3rd Qu.:2.0000  
+##  Max.   :4.00000   Max.   :2.00000   Max.   :2.000000   Max.   :2.0000  
+##                                                                         
+##      PP02G              PP03K           PP04A1          PP05B3     
+##  Min.   :0.000000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
+##  1st Qu.:0.000000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
+##  Median :0.000000   Median :0.000   Median :0.000   Median :0.000  
+##  Mean   :0.001563   Mean   :0.256   Mean   :0.451   Mean   :0.007  
+##  3rd Qu.:0.000000   3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:0.000  
+##  Max.   :2.000000   Max.   :9.000   Max.   :9.000   Max.   :9.000  
+##                     NA's   :26025   NA's   :26025   NA's   :26025  
+##      PP05I           PP05J           PP05K           PP06E1     
+##  Min.   :0.00    Min.   :0.000   Min.   :0.000   Min.   :0.000  
+##  1st Qu.:0.00    1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
+##  Median :0.00    Median :0.000   Median :0.000   Median :0.000  
+##  Mean   :0.77    Mean   :0.216   Mean   :0.347   Mean   :0.091  
+##  3rd Qu.:1.00    3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:0.000  
+##  Max.   :9.00    Max.   :9.000   Max.   :9.000   Max.   :9.000  
+##  NA's   :26025   NA's   :26025   NA's   :26025   NA's   :26025  
+##      PP06K         PP06K_SEM       PP06K_MES          PP06L       
+##  Min.   :0.000   Min.   : 0.00   Min.   : 0.000   Min.   : 0.000  
+##  1st Qu.:0.000   1st Qu.: 0.00   1st Qu.: 0.000   1st Qu.: 0.000  
+##  Median :0.000   Median : 0.00   Median : 0.000   Median : 0.000  
+##  Mean   :0.307   Mean   : 1.32   Mean   : 0.042   Mean   : 1.847  
+##  3rd Qu.:1.000   3rd Qu.: 0.00   3rd Qu.: 0.000   3rd Qu.: 2.000  
+##  Max.   :9.000   Max.   :99.00   Max.   :99.000   Max.   :99.000  
+##  NA's   :26025   NA's   :26025   NA's   :26025    NA's   :26025   
+##     PP07F1_1        PP07F1_2        PP07F1_3         PP07I2     
+##  Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
+##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
+##  Median :2.000   Median :2.000   Median :2.000   Median :0.000  
+##  Mean   :1.452   Mean   :1.481   Mean   :1.471   Mean   :0.655  
+##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:0.000  
+##  Max.   :2.000   Max.   :2.000   Max.   :2.000   Max.   :9.000  
+##  NA's   :26025   NA's   :26025   NA's   :26025   NA's   :26025  
+##      PP07I3          PP07I4          PP07L           PP07M      
+##  Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.000  
+##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000  
+##  Median :0.000   Median :0.000   Median :0.000   Median :0.000  
+##  Mean   :0.637   Mean   :0.514   Mean   :0.572   Mean   :0.041  
+##  3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:1.000   3rd Qu.:0.000  
+##  Max.   :9.000   Max.   :9.000   Max.   :9.000   Max.   :9.000  
+##  NA's   :26025   NA's   :26025   NA's   :26025   NA's   :26025  
+##      PP08G         PP08G_DSEM      PP08G_DMES         PP08H      
+##  Min.   :0.000   Min.   :0.000   Min.   : 0.000   Min.   : 0.00  
+##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.: 0.000   1st Qu.: 0.00  
+##  Median :1.000   Median :5.000   Median : 0.000   Median : 6.00  
+##  Mean   :0.843   Mean   :3.702   Mean   : 0.093   Mean   : 5.44  
+##  3rd Qu.:1.000   3rd Qu.:5.000   3rd Qu.: 0.000   3rd Qu.: 8.00  
+##  Max.   :9.000   Max.   :9.000   Max.   :99.000   Max.   :99.00  
+##  NA's   :26025   NA's   :26025   NA's   :26025    NA's   :26025  
+##      PP10B1          PP10B2          PP10B3          PP10B4     
+##  Min.   :1.00    Min.   :1.0     Min.   :1.00    Min.   :1.00   
+##  1st Qu.:2.00    1st Qu.:1.0     1st Qu.:2.00    1st Qu.:1.00   
+##  Median :2.00    Median :2.0     Median :2.00    Median :2.00   
+##  Mean   :1.78    Mean   :1.7     Mean   :1.76    Mean   :1.69   
+##  3rd Qu.:2.00    3rd Qu.:2.0     3rd Qu.:2.00    3rd Qu.:2.00   
+##  Max.   :2.00    Max.   :2.0     Max.   :2.00    Max.   :2.00   
+##  NA's   :46282   NA's   :46282   NA's   :46282   NA's   :46282  
+##      PP10B5          PP10B6          PP10B7          PP10B8     
+##  Min.   :1.00    Min.   :1.00    Min.   :1.00    Min.   :1.00   
+##  1st Qu.:1.00    1st Qu.:1.00    1st Qu.:2.00    1st Qu.:2.00   
+##  Median :1.00    Median :1.00    Median :2.00    Median :2.00   
+##  Mean   :1.48    Mean   :1.33    Mean   :1.91    Mean   :1.99   
+##  3rd Qu.:2.00    3rd Qu.:2.00    3rd Qu.:2.00    3rd Qu.:2.00   
+##  Max.   :2.00    Max.   :2.00    Max.   :2.00    Max.   :2.00   
+##  NA's   :46282   NA's   :46282   NA's   :46282   NA's   :46282  
+##      PP10B9         PP10B10          PP11L2         V2_01_M       
+##  Min.   :1.00    Min.   :1       Min.   :0.00    Min.   :     -9  
+##  1st Qu.:2.00    1st Qu.:2       1st Qu.:0.00    1st Qu.:      0  
+##  Median :2.00    Median :2       Median :0.00    Median :      0  
+##  Mean   :1.89    Mean   :2       Mean   :0.58    Mean   :  18876  
+##  3rd Qu.:2.00    3rd Qu.:2       3rd Qu.:1.00    3rd Qu.:      0  
+##  Max.   :2.00    Max.   :2       Max.   :3.00    Max.   :4000000  
+##  NA's   :46282   NA's   :46282   NA's   :46282                    
+##     V5_01_M          V5_02_M          V11_01_M           V21_01_M       
+##  Min.   :    -9   Min.   :    -9   Min.   :    -9.0   Min.   :    -9.0  
+##  1st Qu.:     0   1st Qu.:     0   1st Qu.:     0.0   1st Qu.:     0.0  
+##  Median :     0   Median :     0   Median :     0.0   Median :     0.0  
+##  Mean   :  2127   Mean   :   605   Mean   :   387.3   Mean   :   136.2  
+##  3rd Qu.:     0   3rd Qu.:     0   3rd Qu.:     0.0   3rd Qu.:     0.0  
+##  Max.   :170000   Max.   :300000   Max.   :300000.0   Max.   :350000.0  
+##                                                                         
+##     V21_02_M           V21_03_M            V22_01_M          V22_02_M       
+##  Min.   :   -9.00   Min.   :    -9.00   Min.   :     -9   Min.   :    -9.0  
+##  1st Qu.:    0.00   1st Qu.:     0.00   1st Qu.:      0   1st Qu.:     0.0  
+##  Median :    0.00   Median :     0.00   Median :      0   Median :     0.0  
+##  Mean   :   35.51   Mean   :    20.79   Mean   :    549   Mean   :   625.7  
+##  3rd Qu.:    0.00   3rd Qu.:     0.00   3rd Qu.:      0   3rd Qu.:     0.0  
+##  Max.   :70000.00   Max.   :100000.00   Max.   :1000000   Max.   :820000.0  
+##                                                                             
+##     V22_03_M          P_DECCF          P_RDECCF         P_GDECCF     
+##  Min.   :   -9.0   Min.   : 1.000   Min.   : 1.000   Min.   : 1.000  
+##  1st Qu.:    0.0   1st Qu.: 3.000   1st Qu.: 3.000   1st Qu.: 3.000  
+##  Median :    0.0   Median : 5.000   Median : 5.000   Median : 5.000  
+##  Mean   :  363.5   Mean   : 5.287   Mean   : 5.493   Mean   : 5.263  
+##  3rd Qu.:    0.0   3rd Qu.: 8.000   3rd Qu.: 8.000   3rd Qu.: 8.000  
+##  Max.   :70000.0   Max.   :10.000   Max.   :10.000   Max.   :10.000  
+##                    NA's   :11676    NA's   :11676    NA's   :31532   
+##     P_PDECCF         P_IDECCF         P_ADECCF     
+##  Min.   : 1.000   Min.   : 1.000   Min.   : 1.000  
+##  1st Qu.: 3.000   1st Qu.: 3.000   1st Qu.: 3.000  
+##  Median : 6.000   Median : 5.000   Median : 6.000  
+##  Mean   : 5.516   Mean   : 5.414   Mean   : 5.509  
+##  3rd Qu.: 8.000   3rd Qu.: 8.000   3rd Qu.: 8.000  
+##  Max.   :10.000   Max.   :10.000   Max.   :10.000  
+##  NA's   :27481    NA's   :16101    NA's   :11676
 ```
 
 **Beneficio:** Facilita la interpretación de los datos sin necesidad de
@@ -1005,7 +1249,7 @@ dim(eph_data_hogar)
 ```
 
 ```
-## [1] 16462    88
+## [1] 16462    98
 ```
 
 ``` r
@@ -1013,22 +1257,22 @@ head(eph_data_hogar)
 ```
 
 ```
-## # A tibble: 6 × 88
+## # A tibble: 6 × 98
 ##   CODUSU    ANO4 TRIMESTRE NRO_HOGAR REALIZADA REGION MAS_500 AGLOMERADO PONDERA
 ##   <chr>    <int>     <int>     <int>     <int>  <int> <chr>        <int>   <int>
-## 1 TQRMNOR…  2023         4         2         1     43 N               30     107
-## 2 TQRMNOP…  2023         4         1         1     43 N               30     137
-## 3 TQRMNOR…  2023         4         1         1     40 S               23     356
-## 4 TQRMNOQ…  2023         4         2         1     40 S               23     299
-## 5 TQRMNOR…  2023         4         1         1     40 S               23     221
-## 6 TQRMNOS…  2023         4         1         1     40 S               23     446
-## # ℹ 79 more variables: IV1 <int>, IV1_ESP <chr>, IV2 <int>, IV3 <int>,
+## 1 TQRMNOQ…  2023         4         1         1     40 N               19     144
+## 2 TQRMNOR…  2023         4         1         1     41 N               15     161
+## 3 TQRMNOS…  2023         4         1         1     41 N               15     572
+## 4 TQRMNOR…  2023         4         1         1     41 N               15     122
+## 5 TQRMNOP…  2023         4         1         1     41 N               15     133
+## 6 TQRMNOR…  2023         4         2         1     40 N               19     138
+## # ℹ 89 more variables: IV1 <int>, IV1_ESP <chr>, IV2 <int>, IV3 <int>,
 ## #   IV3_ESP <chr>, IV4 <int>, IV5 <int>, IV6 <int>, IV7 <int>, IV7_ESP <chr>,
 ## #   IV8 <int>, IV9 <int>, IV10 <int>, IV11 <int>, IV12_1 <int>, IV12_2 <int>,
 ## #   IV12_3 <int>, II1 <int>, II2 <int>, II3 <int>, II3_1 <int>, II4_1 <int>,
 ## #   II4_2 <int>, II4_3 <int>, II5 <int>, II5_1 <int>, II6 <int>, II6_1 <int>,
 ## #   II7 <int>, II7_ESP <chr>, II8 <int>, II8_ESP <chr>, II9 <int>, V1 <int>,
-## #   V2 <int>, V21 <int>, V22 <int>, V3 <int>, V4 <int>, V5 <int>, V6 <int>, …
+## #   V2 <int>, V2_02 <int>, V2_03 <int>, V21_01 <int>, V22_01 <int>, V3 <int>, …
 ```
 
 ## Tipos de bases disponibles en `{eph}`

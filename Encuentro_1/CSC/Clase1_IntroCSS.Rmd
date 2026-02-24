@@ -34,31 +34,6 @@ output:
 
 ---
 
-
-
-# **Ciencias Sociales Computacionales**
-
-## __Nuevas herramientas y polémicas para el análisis social__
-
-
-####¿Para qué y por qué pensar la relación entre métodos computacionales y Ciencias Sociales? ¿Cómo nos interpela como cientistas sociales? ¿Qué repercusiones trae el giro computacional para el pensamiento social? 
-
-####¿Cuáles son las implicancias para los procesos de investigación? ¿Cambian los instrumentos y cambia toda la teoría social que va con ellos? 
-
-#### ¿Qué aperturas debemos pensar en nuestras carreras de grado y posgrado (contenidos, lenguajes, habilidades) para ser capaces de abordar desafíos de conocimiento transdisciplinares para ampliar la imaginación social? 
-
-#### ¿Qué aprendizajes podemos construir como comunidad académica-educativa? 
-
-#### ¿Cuáles son las habilidades técnicas e intelectuales que necesitamos dominar?
-
-####¿Qué significa ser unx académicx en la era digital? 
-
-#### ¿Quién puede leer y escribir “los números”? 
-
-####¿Cómo es posible formarnos para que nos sintamos igualmente cómodxs con los algoritmos y el análisis de datos, así como con el análisis social y la teoría? 
-
-
----
 # **¿Qué son las Ciencias Sociales Computacionales?**
 - 🔍 **Intersección entre las ciencias sociales, la informática y la estadística.**
 - 📊 **Uso de datos masivos y algoritmos para analizar fenómenos sociales.**
