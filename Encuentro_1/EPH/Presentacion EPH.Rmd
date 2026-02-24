@@ -15,14 +15,18 @@ output:
 editor_options:
   chunk_output_type: console
 ---
+<style>
+.remark-slide-content {
+  text-shadow: none !important;
+}
+</style>
+
 
 ```{r xaringan-themer, include = FALSE}
 #devtools::install_github("gadenbuie/xaringanthemer")
 library(xaringanthemer)
 duo_accent(primary_color = "#006747", secondary_color = "#F5F5F5")
 ```
-
-
 
 
 ```{r setup, include=FALSE}
