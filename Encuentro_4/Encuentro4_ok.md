@@ -2,9 +2,10 @@
 title: "**Visualización de datos en R**"
 subtitle: "**Escuela de Verano de R**"
 author: |
-  **Francisco Favieri**  
-  **Beatriz Soria**
-date: "**Año 2025**"
+  **Francisco Favieri,**  
+  **Beatriz Soria,**
+  **Anabella Abarzúa Cutroni**
+date: "**Año 2026**"
 output:
   slidy_presentation:
     keep_md: true
@@ -25,10 +26,10 @@ fontsize: 24pt
 
 # Introducción
 
-En esta clase vamos centrarnos en tablas y gráficos. Para las tablas tomaremos el paquete `knitr` cuya función `kable` nos va a ayudar a hacer tablas bien piolas y que una versión mas copada la tendremos con `kableExtra` y para los gráficos al glorioso `ggplo2` que lo tenemos en el superpaquete `tidyverse` A lo largo de la sesión, abordaremos los siguientes temas:
+En esta clase vamos centrarnos en tablas y gráficos. Para las tablas tomaremos el paquete `knitr` cuya función `kable` nos va a ayudar a hacer tablas bien piolas y que una versión mas copada la tendremos con `kableExtra` y para los gráficos al glorioso `ggplo2` que lo tenemos en el superpaquete `tidyverse`. A lo largo de la sesión, abordaremos los siguientes temas:
 
 ✅ **Parte 1: ¿Qué es y cómo funciona `{kableExtra}`?**
-✅ **Parte 2: ¿Qué es y como funciona `{ggplot2}`?.** C
+✅ **Parte 2: ¿Qué es y como funciona `{ggplot2}`?.**
 ✅ **Parte 3: Full práctica.** intentaremos sacarle la ficha al asunto.
 
 
@@ -49,9 +50,42 @@ Para instalar un paquete desde CRAN, usamos:
 
 ``` r
 install.packages("eph") # Instala el paquete eph
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/bg/v72nhx3930sc4dp9p25dbn240000gp/T//Rtmp1OH1zU/downloaded_packages
+```
+
+``` r
 install.packages("knitr") #Que tiene kable original
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/bg/v72nhx3930sc4dp9p25dbn240000gp/T//Rtmp1OH1zU/downloaded_packages
+```
+
+``` r
 install.packages("kableExtra")  # Instala el paquete kableExtra
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/bg/v72nhx3930sc4dp9p25dbn240000gp/T//Rtmp1OH1zU/downloaded_packages
+```
+
+``` r
 install.packages("tidyverse")  # Que instala el paquete ggplot2 
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/bg/v72nhx3930sc4dp9p25dbn240000gp/T//Rtmp1OH1zU/downloaded_packages
 ```
 
 Para cargar un paquete ya instalado:
@@ -69,212 +103,98 @@ installed.packages()[,1]  # Muestra una lista de paquetes instalados
 ```
 
 ```
-##               abind                ACEP            antiword             arcenso 
-##             "abind"              "ACEP"          "antiword"           "arcenso" 
-##                 ash         AsioHeaders             askpass          assertthat 
-##               "ash"       "AsioHeaders"           "askpass"        "assertthat" 
-##                  av           backports           base64enc          bayestestR 
-##                "av"         "backports"         "base64enc"        "bayestestR" 
-##                  BH                bigD              binman                 bit 
-##                "BH"              "bigD"            "binman"               "bit" 
-##               bit64              bitops                blob                brew 
-##             "bit64"            "bitops"              "blob"              "brew" 
-##                brio               broom               bslib              cachem 
-##              "brio"             "broom"             "bslib"            "cachem" 
-##               callr                 car             carData               cards 
-##             "callr"               "car"           "carData"             "cards" 
-##             caTools          cellranger              chattr           checkmate 
-##           "caTools"        "cellranger"            "chattr"         "checkmate" 
-##            chromote            classInt                 cli               clipr 
-##          "chromote"          "classInt"               "cli"             "clipr" 
-##               clock         collections          colorspace          commonmark 
-##             "clock"       "collections"        "colorspace"        "commonmark" 
-##              config          conflicted                coro         correlation 
-##            "config"        "conflicted"              "coro"       "correlation" 
-##            corrplot             cowplot               cpp11              crayon 
-##          "corrplot"           "cowplot"             "cpp11"            "crayon" 
-##         credentials           crosstalk                crul                curl 
-##       "credentials"         "crosstalk"              "crul"              "curl" 
-##           cyclocomp          data.table          datawizard                 DBI 
-##         "cyclocomp"        "data.table"        "datawizard"               "DBI" 
-##              dbplyr        densEstBayes               Deriv                desc 
-##            "dbplyr"      "densEstBayes"             "Deriv"              "desc" 
-##            devtools             diagram               dials          DiceDesign 
-##          "devtools"           "diagram"             "dials"        "DiceDesign" 
-##             diffobj              digest             discrim      distributional 
-##           "diffobj"            "digest"           "discrim"    "distributional" 
-##                doBy            doFuture             downlit               dplyr 
-##              "doBy"          "doFuture"           "downlit"             "dplyr" 
-##                  DT              dtplyr               e1071          effectsize 
-##                "DT"            "dtplyr"             "e1071"        "effectsize" 
-##            ellipsis                 eph            evaluate               expss 
-##          "ellipsis"               "eph"          "evaluate"             "expss" 
-##           extrafont         extrafontdb               fansi              farver 
-##         "extrafont"       "extrafontdb"             "fansi"            "farver" 
-##             fastmap           flipbookr         fontawesome   fontBitstreamVera 
-##           "fastmap"         "flipbookr"       "fontawesome" "fontBitstreamVera" 
-##      fontLiberation          fontquiver             forcats             foreach 
-##    "fontLiberation"        "fontquiver"           "forcats"           "foreach" 
-##         formattable             Formula               fresh                  fs 
-##       "formattable"           "Formula"             "fresh"                "fs" 
-##               furrr              future        future.apply              gargle 
-##             "furrr"            "future"      "future.apply"            "gargle" 
-##             gdtools            generics                gert              gfonts 
-##           "gdtools"          "generics"              "gert"            "gfonts" 
-##               ggalt           gganimate              ggdist           ggfittext 
-##             "ggalt"         "gganimate"            "ggdist"         "ggfittext" 
-##             ggforce               ggmap             ggplot2             ggrepel 
-##           "ggforce"             "ggmap"           "ggplot2"           "ggrepel" 
-##            ggridges           ggspatial              ggtext            ggthemes 
-##          "ggridges"         "ggspatial"            "ggtext"          "ggthemes" 
-##                  gh              gifski                Gini            gitcreds 
-##                "gh"            "gifski"              "Gini"          "gitcreds" 
-##             globals                glue         googledrive       googlesheets4 
-##           "globals"              "glue"       "googledrive"     "googlesheets4" 
-##               gower               GPfit           gridExtra            gridtext 
-##             "gower"             "GPfit"         "gridExtra"          "gridtext" 
-##                  gt              gtable           gtsummary             hardhat 
-##                "gt"            "gtable"         "gtsummary"           "hardhat" 
-##               haven                here               highr                 hms 
-##             "haven"              "here"             "highr"               "hms" 
-##          hrbrthemes           htmlTable           htmltools         htmlwidgets 
-##        "hrbrthemes"         "htmlTable"         "htmltools"       "htmlwidgets" 
-##            httpcode              httpuv                httr               httr2 
-##          "httpcode"            "httpuv"              "httr"             "httr2" 
-##                 ids              igraph                ineq               infer 
-##               "ids"            "igraph"              "ineq"             "infer" 
-##                 ini              inline             insight            installr 
-##               "ini"            "inline"           "insight"          "installr" 
-##               ipred             isoband           iterators             janitor 
-##             "ipred"           "isoband"         "iterators"           "janitor" 
-##                jpeg           jquerylib            jsonlite          juicyjuice 
-##              "jpeg"         "jquerylib"          "jsonlite"        "juicyjuice" 
-##          kableExtra                kknn               knitr            labeling 
-##        "kableExtra"              "kknn"             "knitr"          "labeling" 
-##      languageserver               later                lava            lazyeval 
-##    "languageserver"             "later"              "lava"          "lazyeval" 
-##             leaflet   leaflet.providers                 lhs           lifecycle 
-##           "leaflet" "leaflet.providers"               "lhs"         "lifecycle" 
-##               lintr             listenv            litedown                lme4 
-##             "lintr"           "listenv"          "litedown"              "lme4" 
-##                 loo             lpSolve           lubridate              maditr 
-##               "loo"           "lpSolve"         "lubridate"            "maditr" 
-##              magick            magrittr                maps            markdown 
-##            "magick"          "magrittr"              "maps"          "markdown" 
-##        MatrixModels         matrixStats             memoise      microbenchmark 
-##      "MatrixModels"       "matrixStats"           "memoise"    "microbenchmark" 
-##                mime              miniUI               minqa               minty 
-##              "mime"            "miniUI"             "minqa"             "minty" 
-##          modelbased           modeldata            modelenv              modelr 
-##        "modelbased"         "modeldata"          "modelenv"            "modelr" 
-##        modelsummary             munsell          naivebayes              ndjson 
-##      "modelsummary"           "munsell"        "naivebayes"            "ndjson" 
-##             netstat              nloptr            numDeriv             openssl 
-##           "netstat"            "nloptr"          "numDeriv"           "openssl" 
-##            openxlsx                 pak          parallelly          parameters 
-##          "openxlsx"               "pak"        "parallelly"        "parameters" 
-##             parsnip           patchwork            pbkrtest            pdftools 
-##           "parsnip"         "patchwork"          "pbkrtest"          "pdftools" 
-##         performance              pillar            pkgbuild           pkgconfig 
-##       "performance"            "pillar"          "pkgbuild"         "pkgconfig" 
-##             pkgdown             pkgload              plotly                plyr 
-##           "pkgdown"           "pkgload"            "plotly"              "plyr" 
-##                 png            polyclip           posterior              praise 
-##               "png"          "polyclip"         "posterior"            "praise" 
-##         prettyunits            processx             prodlim             profvis 
-##       "prettyunits"          "processx"           "prodlim"           "profvis" 
-##            progress           progressr               proj4            promises 
-##          "progress"         "progressr"             "proj4"          "promises" 
-##               proxy                  ps               purrr                qpdf 
-##             "proxy"                "ps"             "purrr"              "qpdf" 
-##                  qs            quadprog            quantreg            QuickJSR 
-##                "qs"          "quadprog"          "quantreg"          "QuickJSR" 
-##             R.cache         R.methodsS3                R.oo             R.utils 
-##           "R.cache"       "R.methodsS3"              "R.oo"           "R.utils" 
-##                  R6                ragg       RApiSerialize            rappdirs 
-##                "R6"              "ragg"     "RApiSerialize"          "rappdirs" 
-##              raster           rbibutils           rcmdcheck        RColorBrewer 
-##            "raster"         "rbibutils"         "rcmdcheck"      "RColorBrewer" 
-##                Rcpp       RcppArmadillo           RcppEigen        RcppParallel 
-##              "Rcpp"     "RcppArmadillo"         "RcppEigen"      "RcppParallel" 
-##               RCurl              Rdpack           reactable              reactR 
-##             "RCurl"            "Rdpack"         "reactable"            "reactR" 
-##             readODS               readr            readtext              readxl 
-##           "readODS"             "readr"          "readtext"            "readxl" 
-##                REAT             recipes          reformulas             reldist 
-##              "REAT"           "recipes"        "reformulas"           "reldist" 
-##             rematch            rematch2             remotes                renv 
-##           "rematch"          "rematch2"           "remotes"              "renv" 
-##              reprex                 rex                rhub               rJava 
-##            "reprex"               "rex"              "rhub"             "rJava" 
-##               rjson               rlang           rmarkdown                rosm 
-##             "rjson"             "rlang"         "rmarkdown"              "rosm" 
-##            roxygen2           rprojroot             rsample           RSelenium 
-##          "roxygen2"         "rprojroot"           "rsample"         "RSelenium" 
-##               rstan          rstantools          rstudioapi            Rttf2pt1 
-##             "rstan"        "rstantools"        "rstudioapi"          "Rttf2pt1" 
-##           rversions               rvest                  s2                sass 
-##         "rversions"             "rvest"                "s2"              "sass" 
-##              scales                 see             selectr           selenider 
-##            "scales"               "see"           "selectr"         "selenider" 
-##            selenium              semver               servr         sessioninfo 
-##          "selenium"            "semver"             "servr"       "sessioninfo" 
-##                  sf                 sfd              shades               shape 
-##                "sf"               "sfd"            "shades"             "shape" 
-##               shiny      shinydashboard        shinyWidgets              slider 
-##             "shiny"    "shinydashboard"      "shinyWidgets"            "slider" 
-##           snakecase         sourcetools                  sp             SparseM 
-##         "snakecase"       "sourcetools"                "sp"           "SparseM" 
-##             SQUAREM         StanHeaders             streamR          stringfish 
-##           "SQUAREM"       "StanHeaders"           "streamR"        "stringfish" 
-##             stringi             stringr            striprtf              styler 
-##           "stringi"           "stringr"          "striprtf"            "styler" 
-##             svglite                 sys         systemfonts              tables 
-##           "svglite"               "sys"       "systemfonts"            "tables" 
-##             tensorA               terra              testit            testthat 
-##           "tensorA"             "terra"            "testit"          "testthat" 
-##         textshaping              tibble          tidymodels               tidyr 
-##       "textshaping"            "tibble"        "tidymodels"             "tidyr" 
-##          tidyselect           tidyverse          timechange            timeDate 
-##        "tidyselect"         "tidyverse"        "timechange"          "timeDate" 
-##           tinytable             tinytex          transformr           triebeard 
-##         "tinytable"           "tinytex"        "transformr"         "triebeard" 
-##                tune              tweenr                tzdb               units 
-##              "tune"            "tweenr"              "tzdb"             "units" 
-##          urlchecker            urltools             usethis                utf8 
-##        "urlchecker"          "urltools"           "usethis"              "utf8" 
-##                uuid                  V8               vctrs             viridis 
-##              "uuid"                "V8"             "vctrs"           "viridis" 
-##         viridisLite               vroom               waldo                warp 
-##       "viridisLite"             "vroom"             "waldo"              "warp" 
-##               wdman             webshot           websocket         wesanderson 
-##             "wdman"           "webshot"         "websocket"       "wesanderson" 
-##             whisker              whoami               withr                  wk 
-##           "whisker"            "whoami"             "withr"                "wk" 
-##           workflows        workflowsets             writexl            WriteXLS 
-##         "workflows"      "workflowsets"           "writexl"          "WriteXLS" 
-##            xaringan       xaringanExtra      xaringanthemer                xfun 
-##          "xaringan"     "xaringanExtra"    "xaringanthemer"              "xfun" 
-##           XLConnect                xml2        xmlparsedata               xopen 
-##         "XLConnect"              "xml2"      "xmlparsedata"             "xopen" 
-##              xtable                yaml           yardstick                 zip 
-##            "xtable"              "yaml"         "yardstick"               "zip" 
-##                 zoo                base                boot               class 
-##               "zoo"              "base"              "boot"             "class" 
-##             cluster           codetools            compiler            datasets 
-##           "cluster"         "codetools"          "compiler"          "datasets" 
-##             foreign            graphics           grDevices                grid 
-##           "foreign"          "graphics"         "grDevices"              "grid" 
-##          KernSmooth             lattice                MASS              Matrix 
-##        "KernSmooth"           "lattice"              "MASS"            "Matrix" 
-##             methods                mgcv                nlme                nnet 
-##           "methods"              "mgcv"              "nlme"              "nnet" 
-##            parallel               rpart             spatial             splines 
-##          "parallel"             "rpart"           "spatial"           "splines" 
-##               stats              stats4            survival               tcltk 
-##             "stats"            "stats4"          "survival"             "tcltk" 
-##               tools        translations               utils 
-##             "tools"      "translations"             "utils"
+##             askpass             assertr           backports                base 
+##           "askpass"           "assertr"         "backports"              "base" 
+##           base64enc                 bit               bit64            blastula 
+##         "base64enc"               "bit"             "bit64"          "blastula" 
+##                blob            bookdown                boot               broom 
+##              "blob"          "bookdown"              "boot"             "broom" 
+##               bslib              cachem               callr          cellranger 
+##             "bslib"            "cachem"             "callr"        "cellranger" 
+##           checkmate               class            classInt                 cli 
+##         "checkmate"             "class"          "classInt"               "cli" 
+##               clipr             cluster           codetools          commonmark 
+##             "clipr"           "cluster"         "codetools"        "commonmark" 
+##            compiler          conflicted               cpp11              crayon 
+##          "compiler"        "conflicted"             "cpp11"            "crayon" 
+##           crosstalk                curl          data.table      data.validator 
+##         "crosstalk"              "curl"        "data.table"    "data.validator" 
+##            datasets                 DBI              dbplyr              digest 
+##          "datasets"               "DBI"            "dbplyr"            "digest" 
+##               dplyr              dtplyr               e1071                 eph 
+##             "dplyr"            "dtplyr"             "e1071"               "eph" 
+##            evaluate               expss               fansi              farver 
+##          "evaluate"             "expss"             "fansi"            "farver" 
+##             fastmap       flexdashboard         fontawesome             forcats 
+##           "fastmap"     "flexdashboard"       "fontawesome"           "forcats" 
+##             foreign                  fs              gargle            generics 
+##           "foreign"                "fs"            "gargle"          "generics" 
+##             getPass             ggplot2                glue         googledrive 
+##           "getPass"           "ggplot2"              "glue"       "googledrive" 
+##       googlesheets4            graphics           grDevices                grid 
+##     "googlesheets4"          "graphics"         "grDevices"              "grid" 
+##           gridExtra              gtable               haven                here 
+##         "gridExtra"            "gtable"             "haven"              "here" 
+##               highr                 hms           htmlTable           htmltools 
+##             "highr"               "hms"         "htmlTable"         "htmltools" 
+##         htmlwidgets              httpuv                httr                 ids 
+##       "htmlwidgets"            "httpuv"              "httr"               "ids" 
+##             isoband           jquerylib            jsonlite          kableExtra 
+##           "isoband"         "jquerylib"          "jsonlite"        "kableExtra" 
+##          KernSmooth               knitr            labeling            labelled 
+##        "KernSmooth"             "knitr"          "labeling"          "labelled" 
+##               later             lattice            lazyeval             leaflet 
+##             "later"           "lattice"          "lazyeval"           "leaflet" 
+##   leaflet.providers           lifecycle           lubridate              maditr 
+## "leaflet.providers"         "lifecycle"         "lubridate"            "maditr" 
+##            magrittr                MASS              Matrix         matrixStats 
+##          "magrittr"              "MASS"            "Matrix"       "matrixStats" 
+##             memoise             methods                mgcv                mime 
+##           "memoise"           "methods"              "mgcv"              "mime" 
+##              modelr                nlme                nnet             openssl 
+##            "modelr"              "nlme"              "nnet"           "openssl" 
+##            openxlsx              pacman            parallel              pillar 
+##          "openxlsx"            "pacman"          "parallel"            "pillar" 
+##           pkgconfig              plotly                 png         prettyunits 
+##         "pkgconfig"            "plotly"               "png"       "prettyunits" 
+##            processx            progress            promises               proxy 
+##          "processx"          "progress"          "promises"             "proxy" 
+##                  ps               purrr                  R6                ragg 
+##                "ps"             "purrr"                "R6"              "ragg" 
+##            rappdirs              raster        RColorBrewer                Rcpp 
+##          "rappdirs"            "raster"      "RColorBrewer"              "Rcpp" 
+##               readr              readxl             rematch            rematch2 
+##             "readr"            "readxl"           "rematch"          "rematch2" 
+##             remotes              reprex               rlang           rmarkdown 
+##           "remotes"            "reprex"             "rlang"         "rmarkdown" 
+##          rmdformats               rpart           rprojroot          rstudioapi 
+##        "rmdformats"             "rpart"         "rprojroot"        "rstudioapi" 
+##               rvest                  s2                  S7                sass 
+##             "rvest"                "s2"                "S7"              "sass" 
+##              scales             selectr     semantic.assets                  sf 
+##            "scales"           "selectr"   "semantic.assets"                "sf" 
+##               shiny      shiny.semantic         sourcetools                  sp 
+##             "shiny"    "shiny.semantic"       "sourcetools"                "sp" 
+##             spatial             splines               stats              stats4 
+##           "spatial"           "splines"             "stats"            "stats4" 
+##             stringi             stringr            survival             svglite 
+##           "stringi"           "stringr"          "survival"           "svglite" 
+##                 sys         systemfonts               tcltk               terra 
+##               "sys"       "systemfonts"             "tcltk"             "terra" 
+##         textshaping              tibble               tidyr          tidyselect 
+##       "textshaping"            "tibble"             "tidyr"        "tidyselect" 
+##           tidyverse          timechange             tinytex               tools 
+##         "tidyverse"        "timechange"           "tinytex"             "tools" 
+##                tzdb               units                utf8               utils 
+##              "tzdb"             "units"              "utf8"             "utils" 
+##                uuid               vctrs             viridis         viridisLite 
+##              "uuid"             "vctrs"           "viridis"       "viridisLite" 
+##               vroom               withr                  wk             writexl 
+##             "vroom"             "withr"                "wk"           "writexl" 
+##                xfun                xml2              xtable                yaml 
+##              "xfun"              "xml2"            "xtable"              "yaml" 
+##                 zip                 zoo 
+##               "zip"               "zoo"
 ```
 
 # Características clave de **`kableExtra`**
@@ -301,7 +221,7 @@ dim(eph_data)
 ```
 
 ```
-## [1] 47337   177
+## [1] 47337   235
 ```
 
 ``` r
@@ -338,13 +258,24 @@ colnames(eph_data)
 ## [131] "PP11S"      "PP11T"      "P21"        "DECOCUR"    "IDECOCUR"  
 ## [136] "RDECOCUR"   "GDECOCUR"   "PDECOCUR"   "ADECOCUR"   "PONDIIO"   
 ## [141] "TOT_P12"    "P47T"       "DECINDR"    "IDECINDR"   "RDECINDR"  
-## [146] "GDECINDR"   "PDECINDR"   "ADECINDR"   "PONDII"     "V2_M"      
-## [151] "V3_M"       "V4_M"       "V5_M"       "V8_M"       "V9_M"      
-## [156] "V10_M"      "V11_M"      "V12_M"      "V18_M"      "V19_AM"    
-## [161] "V21_M"      "T_VI"       "ITF"        "DECIFR"     "IDECIFR"   
-## [166] "RDECIFR"    "GDECIFR"    "PDECIFR"    "ADECIFR"    "IPCF"      
-## [171] "DECCFR"     "IDECCFR"    "RDECCFR"    "GDECCFR"    "PDECCFR"   
-## [176] "ADECCFR"    "PONDIH"
+## [146] "GDECINDR"   "PDECINDR"   "ADECINDR"   "PONDII"     "V3_M"      
+## [151] "V4_M"       "V8_M"       "V9_M"       "V10_M"      "V12_M"     
+## [156] "V18_M"      "V19_AM"     "T_VI"       "ITF"        "DECIFR"    
+## [161] "IDECIFR"    "RDECIFR"    "GDECIFR"    "PDECIFR"    "ADECIFR"   
+## [166] "IPCF"       "DECCFR"     "IDECCFR"    "RDECCFR"    "GDECCFR"   
+## [171] "PDECCFR"    "ADECCFR"    "PONDIH"     "V2_02_M"    "V2_03_M"   
+## [176] "V5_03_M"    "V11_02_M"   "PP07B1_01"  "EMPLEO"     "SECTOR"    
+## [181] "PP02A"      "PP02B"      "PP02D"      "PP02F"      "PP02G"     
+## [186] "PP03K"      "PP04A1"     "PP05B3"     "PP05I"      "PP05J"     
+## [191] "PP05K"      "PP06E1"     "PP06K"      "PP06K_SEM"  "PP06K_MES" 
+## [196] "PP06L"      "PP07F1_1"   "PP07F1_2"   "PP07F1_3"   "PP07I2"    
+## [201] "PP07I3"     "PP07I4"     "PP07L"      "PP07M"      "PP08G"     
+## [206] "PP08G_DSEM" "PP08G_DMES" "PP08H"      "PP10B1"     "PP10B2"    
+## [211] "PP10B3"     "PP10B4"     "PP10B5"     "PP10B6"     "PP10B7"    
+## [216] "PP10B8"     "PP10B9"     "PP10B10"    "PP11L2"     "V2_01_M"   
+## [221] "V5_01_M"    "V5_02_M"    "V11_01_M"   "V21_01_M"   "V21_02_M"  
+## [226] "V21_03_M"   "V22_01_M"   "V22_02_M"   "V22_03_M"   "P_DECCF"   
+## [231] "P_RDECCF"   "P_GDECCF"   "P_PDECCF"   "P_IDECCF"   "P_ADECCF"
 ```
 
 # Ejemplo 1: Filtramos la base `eph_data` para seleccionar algunas columnas de interés y mostrar los primeros 10 registros.
@@ -376,74 +307,74 @@ tabla_eph %>%
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 54 </td>
+   <td style="text-align:right;"> 300000 </td>
+   <td style="text-align:right;"> 826 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 64000 </td>
+   <td style="text-align:right;"> 3103 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 265000 </td>
+   <td style="text-align:right;"> 2852 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 51 </td>
+   <td style="text-align:right;"> 500000 </td>
+   <td style="text-align:right;"> 1151 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:right;"> 22000 </td>
+   <td style="text-align:right;"> 105 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 57 </td>
+   <td style="text-align:right;"> 90000 </td>
+   <td style="text-align:right;"> 124 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 120000 </td>
+   <td style="text-align:right;"> 166 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
    <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 60 </td>
    <td style="text-align:right;"> -9 </td>
-   <td style="text-align:right;"> 370 </td>
+   <td style="text-align:right;"> 916 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 52 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 370 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 13 </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 34 </td>
-   <td style="text-align:right;"> 450000 </td>
-   <td style="text-align:right;"> 281 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 200000 </td>
-   <td style="text-align:right;"> 281 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 281 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 77 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 165 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 43 </td>
-   <td style="text-align:right;"> -9 </td>
-   <td style="text-align:right;"> 165 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 74 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 168 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 87 </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 168 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 93 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 47 </td>
+   <td style="text-align:right;"> 55 </td>
    <td style="text-align:right;"> 400000 </td>
-   <td style="text-align:right;"> 85 </td>
+   <td style="text-align:right;"> 2145 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:right;"> -9 </td>
+   <td style="text-align:right;"> 182 </td>
   </tr>
 </tbody>
 </table>
@@ -456,16 +387,16 @@ print(tabla_eph)  # Imprimir tabla en consola
 ## # A tibble: 10 × 5
 ##    AGLOMERADO  CH04  CH06    P21 PONDERA
 ##         <int> <int> <int>  <int>   <int>
-##  1          7     1    60     -9     370
-##  2          7     2    52      0     370
-##  3         17     1    34 450000     281
-##  4         17     2    32 200000     281
-##  5         17     2     6      0     281
-##  6         17     2    77      0     165
-##  7         17     2    43     -9     165
-##  8         17     1    74      0     168
-##  9         17     2    87      0     168
-## 10         93     1    47 400000      85
+##  1         33     2    54 300000     826
+##  2         33     2    25  64000    3103
+##  3         33     1    31 265000    2852
+##  4         33     1    51 500000    1151
+##  5         22     1    34  22000     105
+##  6         22     1    57  90000     124
+##  7         22     1    24 120000     166
+##  8         33     1    60     -9     916
+##  9         13     1    55 400000    2145
+## 10          8     1    29     -9     182
 ```
 
 # ¿Qué hicimos?
@@ -484,7 +415,7 @@ print(tabla_eph)  # Imprimir tabla en consola
 
 # Pero la tabla está bien horrible, le pongamos mas onda. Veamos lo que hicimos ayer
 
-Renombramos la base y aplicamos los mutates correspondientes
+Renombramos la base y aplicamos los `mutates` correspondientes
 
 
 ``` r
@@ -532,21 +463,6 @@ tabla_eph2 %>%
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Varones </td>
-   <td style="text-align:left;"> De 30 a 64 años </td>
-   <td style="text-align:left;"> Ocupado </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Mujeres </td>
-   <td style="text-align:left;"> De 30 a 64 años </td>
-   <td style="text-align:left;"> Inactivo </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Varones </td>
-   <td style="text-align:left;"> De 30 a 64 años </td>
-   <td style="text-align:left;"> Ocupado </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> Mujeres </td>
    <td style="text-align:left;"> De 30 a 64 años </td>
    <td style="text-align:left;"> Ocupado </td>
@@ -554,31 +470,46 @@ tabla_eph2 %>%
   <tr>
    <td style="text-align:left;"> Mujeres </td>
    <td style="text-align:left;"> Hasta 29 años </td>
-   <td style="text-align:left;"> Menor de 10 </td>
+   <td style="text-align:left;"> Ocupado </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Mujeres </td>
-   <td style="text-align:left;"> 65 años y más </td>
-   <td style="text-align:left;"> Inactivo </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Mujeres </td>
+   <td style="text-align:left;"> Varones </td>
    <td style="text-align:left;"> De 30 a 64 años </td>
    <td style="text-align:left;"> Ocupado </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Varones </td>
-   <td style="text-align:left;"> 65 años y más </td>
-   <td style="text-align:left;"> Inactivo </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Mujeres </td>
-   <td style="text-align:left;"> 65 años y más </td>
-   <td style="text-align:left;"> Inactivo </td>
+   <td style="text-align:left;"> De 30 a 64 años </td>
+   <td style="text-align:left;"> Ocupado </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Varones </td>
    <td style="text-align:left;"> De 30 a 64 años </td>
+   <td style="text-align:left;"> Ocupado </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Varones </td>
+   <td style="text-align:left;"> De 30 a 64 años </td>
+   <td style="text-align:left;"> Ocupado </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Varones </td>
+   <td style="text-align:left;"> Hasta 29 años </td>
+   <td style="text-align:left;"> Ocupado </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Varones </td>
+   <td style="text-align:left;"> De 30 a 64 años </td>
+   <td style="text-align:left;"> Ocupado </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Varones </td>
+   <td style="text-align:left;"> De 30 a 64 años </td>
+   <td style="text-align:left;"> Ocupado </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Varones </td>
+   <td style="text-align:left;"> Hasta 29 años </td>
    <td style="text-align:left;"> Ocupado </td>
   </tr>
 </tbody>
@@ -705,6 +636,7 @@ tabla_eph3 %>%
 <sup></sup> Nota: Los valores exhibidos no están ponderados</td></tr>
 </tfoot>
 </table>
+
 Che pero esto queda medio trunco, osea no se ve bien. Vamos a ver si lo podemos mejorar ¿que tal si pasamos las variables de Estado como Filas? a ver...
 
 # Una nueva esperanza
@@ -809,11 +741,15 @@ tabla_eph3 %>%
 </table>
 Ahí queda súper, aunque no pude resolver el orden de la columna de mujeres, quien quiera, tarea para la casa, si puede resolverlo y explicarlo para la próxima clase tendrá un punto a favor en el trabajo final. 
 
-# Bueno, ¿vieron cómo cambia la cosa? Con `kableExtra` podemos hacer tablas mucho más atractivas y fáciles de leer. Ahora, vamos a ver cómo podemos aplicar `kableExtra` a un caso práctico con datos de la EPH.
+# Bueno, ¿vieron cómo cambia la cosa? 
 
-# Vamos con la práctica guiada. Quiero una tabla con las tasas de subocupación para el aglomerado Gran Mendoza durante el 3er trimestre de 2024.
+Con `kableExtra` podemos hacer tablas mucho más atractivas y fáciles de leer. Ahora, vamos a ver cómo podemos aplicar `kableExtra` a un caso práctico con datos de la EPH.
 
-Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas ponderadas (por `PONDERA``)
+# Vamos con la práctica guiada. 
+
+Quiero una tabla con las tasas de subocupación para el aglomerado Gran Mendoza durante el 3er trimestre de 2024.
+
+Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas ponderadas (por `PONDERA`)
 
 # Algo básico para recordar.
 
@@ -848,6 +784,7 @@ Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra qu
 Como verán consultamos al EPH-registro, lo encuentran en la carpeta del Encuentro 1 o descargando desde indec
 
 # Ejercicio en grupos de 3 / 20min
+
 Calcular tasas de actividad, empleo y desempleo para el Gran San Juan y Gran Mendoza en el 3er trimestre de 2023 y presentar una **tabla** donde aparezca una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas redondeadas y ponderadas (por `PONDERA``)
 
 # Bueno ¿no nos estamos olvidando de alguien? Pero claro `ggplot2` el paquete que nos permite hacer gráficos en R.
@@ -858,15 +795,28 @@ Vamos a tomar otra vez la tabla final e intentaremos hacer una serie, otra vez a
 
 ## Características clave de `ggplot2`
 
-- Usa una estructura basada en capas.
-- Permite personalizar cada elemento del gráfico.
-- Compatible con `dplyr` y `tidyverse`.
+- Usa una estructura basada en capas. 
+
+Sobre un lienzo en blanco (canva) se establecen ejes y un geom o más. Estos `geom` son los que determinan las capa (ver Cheatsheet de Ggplot2). Como criterio general podemos establecer que el primer geom es el principal, los siguientes son secundarios y buscan añadir información para la interpretación de la variable principal.
+
+Esto requiere cierta normalización de los datos, cada capa debe poder graficarse con la misma tabla y tener las misma escala de valores. Por eso antes de graficar DEBEMOS imperiosamente generar una tabla con los datos a graficar. A diferencia de excel, con ggplot2 generalmente no graficamos desde la base de datos madre.
+
+- Permite personalizar cada elemento del gráfico. 
+
+Acá es donde tomamos decisiones estéticas que hacen a la representación del dato. En general se buscan representaciones sencillas, interpretables a primera vista. En este sentido, menos es más.
+También es donde agregamos información fundamental como el título del gráfico, las etiquetas de los ejes y la fuente.
+
+- Compatible con `dplyr` y `tidyverse`. 
+
+Lo que nos permite tener un flujo de trabajo coherente y relativamente lineal. En general: bajamos la base de datos, la preprocesamos, procesamos los datos que nos interesan para su análisis general y recortamos las tablas para el análisis y represetación mediante tablas y gráficos.
+
 - Soporta diferentes tipos de gráficos: dispersión, barras, líneas, boxplots, histogramas, entre otros.
 
-## Ejemplo práctico con `eph3t24`
+La elección del tipo de gráfico depende del dato que queramos representar. En el material de este módulo van a encontrar una pequeña guía para seleccionar gráficos. Sin embargo, muchas veces los gráficos clásicos son suficientes cuando trabajamos con datos estructurados como los de la EPH.
+
+# Ejemplo práctico con `eph3t24`
 
 A continuación, crearemos un gráfico de barras que muestra la distribución de la población ocupada y desocupada en la base de datos `eph3t24`.
-
 
 
 ``` r
@@ -897,7 +847,9 @@ ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y
    - `labs()`: Agrega títulos y etiquetas.
    - `theme_minimal()`: Aplica un diseño limpio
 
-# Pero digamos todo, que gráfico horrible. Veamos si le ponemos valores procentuales y ajustamos el desastre que aparece en el eje de las y...
+# Pero digamos todo, que gráfico horrible. 
+
+Veamos si le ponemos valores procentuales y ajustamos el desastre que aparece en el eje de las y...
 
 
 ``` r
@@ -906,7 +858,7 @@ library(scales)  # Para formatear los valores en porcentaje
 
 ```
 ## 
-## Adjuntando el paquete: 'scales'
+## Attaching package: 'scales'
 ```
 
 ```
@@ -943,6 +895,90 @@ ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y
 
 ![](Encuentro4_ok_files/figure-slidy/grafico_barras234-1.png)<!-- -->
 
-# Bueno, ahora vamos con la práctica guiada para hacer un grafico de lineas pues calcularemos las tasas y las graficaremos en varios trimestres
+# Para meterle complejidad al análisis ¿Facetado, capa extra?
 
-# Llegamos al final, al laburo grupal. Quiero hacer el mismo grafico, pero ver en la serie  el gráfico de la tasa de desocupácion entre Gran San Juan y otra Gran Mendoza.
+Al principio dijimos que `ggplo2` funciona con **capas (geom principal + geoms secundarios)**. Otro recurso adicional son los **facetados**, usados generalmente para comparar el compartamiento de la variable principal qu estamos analizando haciendo **"un corte" con otra variable**. Por ejemplo, distinguir ocupados y desocupados por sexo.
+
+Hasta el momento hemos usado solo una capa para hacer nuestro gráfico. ¿Por qué? Porque sencillamente es lo que nuestros datos requerían para su representación. En este sentido las necesidades analíticas son las que mandan.
+
+Entonces, si quisieramos sumar complejidad al análisis podemos podríamos hacer un faceteado. Veamos cómo:
+
+
+``` r
+# Filtrar datos relevantes
+data_plot2 <- eph_data %>%
+  filter(ESTADO %in% c(1,2)) %>%  # Estado 1: Ocupado, Estado 2: Desocupado. Nos traemos los datos de  dos categorías de la variable Estado.
+  group_by(ESTADO, CH04) %>% # agrupamos los datos por dos varibales: Estado y Sexo
+  summarise(Total = sum(PONDERA, na.rm = TRUE)) %>% #contamos por PONDERA. Es decir creamos Total
+  group_by(CH04) %>%
+  mutate(Percentage = (Total / sum(Total)) * 100)  # Convertir en porcentajes
+```
+
+```
+## `summarise()` has grouped output by 'ESTADO'. You can override using the
+## `.groups` argument.
+```
+
+``` r
+# Crear el gráfico
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + # dogce hace que las barras estén una al lado de otra en vez de apiladas. Sacamos la leyenda para no repetir información.
+  facet_wrap(~ CH04, 
+             labeller = as_labeller(c("1" = "Varón", "2" = "Mujer"))) +   # Usamos labeller para asignar nombres a los códigos 1 y 2
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+```
+
+![](Encuentro4_ok_files/figure-slidy/grafico_barras2345-1.png)<!-- -->
+
+# Muy lindo pero los porcentajes no se pueden saber a simple vista. 
+
+Es más, parece que ambos sexos tienen la misma distribución de Estado ocupacional. Veamos cómo sumar una capa de información al gráfico que nos brinde mayor exactitud para la interpretación.
+
+
+``` r
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + 
+  # Usamos labeller para asignar nombres a los códigos 1 y 2
+  facet_wrap(~ CH04, 
+             labeller = as_labeller(c("1" = "Varones", "2" = "Mujeres"))) + 
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")), # agregamos como capa la etiqueta que contiene el porcentaje que le da el valor a la barra
+          vjust = -0.5,           # Ajuste vertical (arriba de la barra)
+          size = 3.5 ) +         # Tamaño de letra
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+```
+
+![](Encuentro4_ok_files/figure-slidy/grafico_barras23456-1.png)<!-- -->
+
+¡Tanto trabajo para corroborar que la diferencia es ínfima! Así somos.
+
+# ¿Qué hicimos?
+
+1. Hicimos una tabla igual a la del gráfico original pero le **sumamos la variable que ibamos a usar para el faceteado "CH04"**. Calculamos los porcentajes con esa distinción. Osea de los ocupados, qué porcentaje son varones y qué porcentaje son mujeres.
+2. Al gráfico original le **sumamos `facet_wrap`** distinguir entre sexos. El gráfico se abrió en dos facetas: Varones, Mujeres. Sacamos la leyenda y etiquetamos las facetas.
+3. **Sumamos información** con una capa `geom_text` que nos permite poner el valor del porcentaje sobre las barras.
+
+# Práctica guíada
+
+Bueno, ahora vamos con la práctica guiada para hacer un grafico de líneas pues calcularemos las tasas y las graficaremos en varios trimestres.
+
+# Llegamos al final, al laburo grupal. 
+
+Quiero hacer el mismo grafico, pero ver en la serie  el gráfico de la tasa de desocupación entre Gran San Juan y otra Gran Mendoza.

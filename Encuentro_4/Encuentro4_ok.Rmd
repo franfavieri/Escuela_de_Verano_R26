@@ -2,9 +2,10 @@
 title: "**Visualización de datos en R**"
 subtitle: "**Escuela de Verano de R**"
 author: |
-  **Francisco Favieri**  
-  **Beatriz Soria**
-date: "**Año 2025**"
+  **Francisco Favieri,**  
+  **Beatriz Soria,**
+  **Anabella Abarzúa Cutroni**
+date: "**Año 2026**"
 output:
   slidy_presentation:
     keep_md: true
@@ -31,10 +32,10 @@ library(kableExtra)
 
 # Introducción
 
-En esta clase vamos centrarnos en tablas y gráficos. Para las tablas tomaremos el paquete `knitr` cuya función `kable` nos va a ayudar a hacer tablas bien piolas y que una versión mas copada la tendremos con `kableExtra` y para los gráficos al glorioso `ggplo2` que lo tenemos en el superpaquete `tidyverse` A lo largo de la sesión, abordaremos los siguientes temas:
+En esta clase vamos centrarnos en tablas y gráficos. Para las tablas tomaremos el paquete `knitr` cuya función `kable` nos va a ayudar a hacer tablas bien piolas y que una versión mas copada la tendremos con `kableExtra` y para los gráficos al glorioso `ggplo2` que lo tenemos en el superpaquete `tidyverse`. A lo largo de la sesión, abordaremos los siguientes temas:
 
 ✅ **Parte 1: ¿Qué es y cómo funciona `{kableExtra}`?**
-✅ **Parte 2: ¿Qué es y como funciona `{ggplot2}`?.** C
+✅ **Parte 2: ¿Qué es y como funciona `{ggplot2}`?.**
 ✅ **Parte 3: Full práctica.** intentaremos sacarle la ficha al asunto.
 
 
@@ -130,7 +131,7 @@ print(tabla_eph)  # Imprimir tabla en consola
 
 # Pero la tabla está bien horrible, le pongamos mas onda. Veamos lo que hicimos ayer
 
-Renombramos la base y aplicamos los mutates correspondientes
+Renombramos la base y aplicamos los `mutates` correspondientes
 
 ```{r tabla_kable2, echo=TRUE}
 # Tranformamos algunas variables
@@ -195,6 +196,7 @@ tabla_eph3 %>%
            general = "Nota: Los valores exhibidos no están ponderados")
 
 ```
+
 Che pero esto queda medio trunco, osea no se ve bien. Vamos a ver si lo podemos mejorar ¿que tal si pasamos las variables de Estado como Filas? a ver...
 
 # Una nueva esperanza
@@ -228,11 +230,15 @@ tabla_eph3 %>%
 ```
 Ahí queda súper, aunque no pude resolver el orden de la columna de mujeres, quien quiera, tarea para la casa, si puede resolverlo y explicarlo para la próxima clase tendrá un punto a favor en el trabajo final. 
 
-# Bueno, ¿vieron cómo cambia la cosa? Con `kableExtra` podemos hacer tablas mucho más atractivas y fáciles de leer. Ahora, vamos a ver cómo podemos aplicar `kableExtra` a un caso práctico con datos de la EPH.
+# Bueno, ¿vieron cómo cambia la cosa? 
 
-# Vamos con la práctica guiada. Quiero una tabla con las tasas de subocupación para el aglomerado Gran Mendoza durante el 3er trimestre de 2024.
+Con `kableExtra` podemos hacer tablas mucho más atractivas y fáciles de leer. Ahora, vamos a ver cómo podemos aplicar `kableExtra` a un caso práctico con datos de la EPH.
 
-Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas ponderadas (por `PONDERA``)
+# Vamos con la práctica guiada. 
+
+Quiero una tabla con las tasas de subocupación para el aglomerado Gran Mendoza durante el 3er trimestre de 2024.
+
+Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas ponderadas (por `PONDERA`)
 
 # Algo básico para recordar.
 
@@ -267,6 +273,7 @@ Debe aparecer  una columna que diga **tasas** (y ahí todas las tasas) y otra qu
 Como verán consultamos al EPH-registro, lo encuentran en la carpeta del Encuentro 1 o descargando desde indec
 
 # Ejercicio en grupos de 3 / 20min
+
 Calcular tasas de actividad, empleo y desempleo para el Gran San Juan y Gran Mendoza en el 3er trimestre de 2023 y presentar una **tabla** donde aparezca una columna que diga **tasas** (y ahí todas las tasas) y otra que diga **valor** y aparezcan los valores de las tasas redondeadas y ponderadas (por `PONDERA``)
 
 # Bueno ¿no nos estamos olvidando de alguien? Pero claro `ggplot2` el paquete que nos permite hacer gráficos en R.
@@ -277,15 +284,28 @@ Vamos a tomar otra vez la tabla final e intentaremos hacer una serie, otra vez a
 
 ## Características clave de `ggplot2`
 
-- Usa una estructura basada en capas.
-- Permite personalizar cada elemento del gráfico.
-- Compatible con `dplyr` y `tidyverse`.
+- Usa una estructura basada en capas. 
+
+Sobre un lienzo en blanco (canva) se establecen ejes y un geom o más. Estos `geom` son los que determinan las capa (ver Cheatsheet de Ggplot2). Como criterio general podemos establecer que el primer geom es el principal, los siguientes son secundarios y buscan añadir información para la interpretación de la variable principal.
+
+Esto requiere cierta normalización de los datos, cada capa debe poder graficarse con la misma tabla y tener las misma escala de valores. Por eso antes de graficar DEBEMOS imperiosamente generar una tabla con los datos a graficar. A diferencia de excel, con ggplot2 generalmente no graficamos desde la base de datos madre.
+
+- Permite personalizar cada elemento del gráfico. 
+
+Acá es donde tomamos decisiones estéticas que hacen a la representación del dato. En general se buscan representaciones sencillas, interpretables a primera vista. En este sentido, menos es más.
+También es donde agregamos información fundamental como el título del gráfico, las etiquetas de los ejes y la fuente.
+
+- Compatible con `dplyr` y `tidyverse`. 
+
+Lo que nos permite tener un flujo de trabajo coherente y relativamente lineal. En general: bajamos la base de datos, la preprocesamos, procesamos los datos que nos interesan para su análisis general y recortamos las tablas para el análisis y represetación mediante tablas y gráficos.
+
 - Soporta diferentes tipos de gráficos: dispersión, barras, líneas, boxplots, histogramas, entre otros.
 
-## Ejemplo práctico con `eph3t24`
+La elección del tipo de gráfico depende del dato que queramos representar. En el material de este módulo van a encontrar una pequeña guía para seleccionar gráficos. Sin embargo, muchas veces los gráficos clásicos son suficientes cuando trabajamos con datos estructurados como los de la EPH.
+
+# Ejemplo práctico con `eph3t24`
 
 A continuación, crearemos un gráfico de barras que muestra la distribución de la población ocupada y desocupada en la base de datos `eph3t24`.
-
 
 ```{r grafico_barras23, echo=TRUE}
 # Filtrar datos relevantes
@@ -313,7 +333,9 @@ ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y
    - `labs()`: Agrega títulos y etiquetas.
    - `theme_minimal()`: Aplica un diseño limpio
 
-# Pero digamos todo, que gráfico horrible. Veamos si le ponemos valores procentuales y ajustamos el desastre que aparece en el eje de las y...
+# Pero digamos todo, que gráfico horrible. 
+
+Veamos si le ponemos valores procentuales y ajustamos el desastre que aparece en el eje de las y...
 
 ```{r grafico_barras234, echo=TRUE}
 library(scales)  # Para formatear los valores en porcentaje 
@@ -337,6 +359,77 @@ ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y
   theme_classic()
 ```
 
-# Bueno, ahora vamos con la práctica guiada para hacer un grafico de lineas pues calcularemos las tasas y las graficaremos en varios trimestres
+# Para meterle complejidad al análisis ¿Facetado, capa extra?
 
-# Llegamos al final, al laburo grupal. Quiero hacer el mismo grafico, pero ver en la serie  el gráfico de la tasa de desocupácion entre Gran San Juan y otra Gran Mendoza.
+Al principio dijimos que `ggplo2` funciona con **capas (geom principal + geoms secundarios)**. Otro recurso adicional son los **facetados**, usados generalmente para comparar el compartamiento de la variable principal qu estamos analizando haciendo **"un corte" con otra variable**. Por ejemplo, distinguir ocupados y desocupados por sexo.
+
+Hasta el momento hemos usado solo una capa para hacer nuestro gráfico. ¿Por qué? Porque sencillamente es lo que nuestros datos requerían para su representación. En este sentido las necesidades analíticas son las que mandan.
+
+Entonces, si quisieramos sumar complejidad al análisis podemos podríamos hacer un faceteado. Veamos cómo:
+
+```{r grafico_barras2345, echo=TRUE}
+# Filtrar datos relevantes
+data_plot2 <- eph_data %>%
+  filter(ESTADO %in% c(1,2)) %>%  # Estado 1: Ocupado, Estado 2: Desocupado. Nos traemos los datos de  dos categorías de la variable Estado.
+  group_by(ESTADO, CH04) %>% # agrupamos los datos por dos varibales: Estado y Sexo
+  summarise(Total = sum(PONDERA, na.rm = TRUE)) %>% #contamos por PONDERA. Es decir creamos Total
+  group_by(CH04) %>%
+  mutate(Percentage = (Total / sum(Total)) * 100)  # Convertir en porcentajes
+
+# Crear el gráfico
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + # dogce hace que las barras estén una al lado de otra en vez de apiladas. Sacamos la leyenda para no repetir información.
+  facet_wrap(~ CH04, 
+             labeller = as_labeller(c("1" = "Varón", "2" = "Mujer"))) +   # Usamos labeller para asignar nombres a los códigos 1 y 2
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+```
+
+# Muy lindo pero los porcentajes no se pueden saber a simple vista. 
+
+Es más, parece que ambos sexos tienen la misma distribución de Estado ocupacional. Veamos cómo sumar una capa de información al gráfico que nos brinde mayor exactitud para la interpretación.
+
+```{r grafico_barras23456, echo=TRUE}
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + 
+  # Usamos labeller para asignar nombres a los códigos 1 y 2
+  facet_wrap(~ CH04, 
+             labeller = as_labeller(c("1" = "Varones", "2" = "Mujeres"))) + 
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")), # agregamos como capa la etiqueta que contiene el porcentaje que le da el valor a la barra
+          vjust = -0.5,           # Ajuste vertical (arriba de la barra)
+          size = 3.5 ) +         # Tamaño de letra
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+```
+
+¡Tanto trabajo para corroborar que la diferencia es ínfima! Así somos.
+
+# ¿Qué hicimos?
+
+1. Hicimos una tabla igual a la del gráfico original pero le **sumamos la variable que ibamos a usar para el faceteado "CH04"**. Calculamos los porcentajes con esa distinción. Osea de los ocupados, qué porcentaje son varones y qué porcentaje son mujeres.
+2. Al gráfico original le **sumamos `facet_wrap`** distinguir entre sexos. El gráfico se abrió en dos facetas: Varones, Mujeres. Sacamos la leyenda y etiquetamos las facetas.
+3. **Sumamos información** con una capa `geom_text` que nos permite poner el valor del porcentaje sobre las barras.
+
+# Práctica guíada
+
+Bueno, ahora vamos con la práctica guiada para hacer un grafico de líneas pues calcularemos las tasas y las graficaremos en varios trimestres.
+
+# Llegamos al final, al laburo grupal. 
+
+Quiero hacer el mismo grafico, pero ver en la serie  el gráfico de la tasa de desocupación entre Gran San Juan y otra Gran Mendoza.
