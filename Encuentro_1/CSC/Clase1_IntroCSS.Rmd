@@ -1,10 +1,8 @@
 ---
 title: "Introducción a las Ciencias Sociales Computacionales y a R"
-subtitle: "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R "
+subtitle: "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R"
 author: |
-  <div style="text-align: right;">
   Francisco Favieri | Beatriz Soria | Anabella Abarzua Cutroni
-  </div>
 output:
   xaringan::moon_reader:
     self_contained: true
@@ -16,13 +14,17 @@ output:
       highlightLines: true
       highlightSpans: true
       countIncrementalSlides: false
-  
-
- 
-   
 ---
 
-
+<style>
+.title-slide .author {
+  text-align: right;
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+</style>
+ 
+   
 # **Encuentros del 2/3 al 6/3 de 15 a 18 HS**
 
 ### Encuentro 1: Presentación del taller. Introducción a las Ciencias Sociales Computacionales y a R. ¿Qué son las CSS y R? ¿Qué es (muy brevemente) la EPH? 
@@ -160,7 +162,7 @@ __ComunicaR__📝
 
 ##-  📝 **Un análisis potente requiere una comunicación potente.**
 ##- 📝️**La presentación clara y reproducible de resultados es clave para compartir hallazgos.**
-##- 📝️**rmarkdown facilita la documentación del proceso, asegurando que otxos puedan replicar y entender el trabajo.**
+##- 📝️**rmarkdown facilita la documentación del proceso, asegurando que otrxs puedan replicar y entender el trabajo.**
 
 ## -Encuentro 5
 
