@@ -347,7 +347,8 @@ data_plot <- eph_data %>%
   summarise(Total = sum(PONDERA, na.rm = TRUE)) %>%
   mutate(Percentage = (Total / sum(Total)) * 100)  # Convertir en porcentajes
 
-# Crear el gráfico
+# Crear el gráfico 1
+Grafico_1 <-
 ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y = Percentage)) +
   geom_bar(stat = "identity", fill = "steelblue") +
   labs(title = "Gráfico 1. Distribución porcentual de la Población Económicamente Activa. 3er trimestre de 2024. Gran Mendoza. Valores relativos.",
@@ -376,7 +377,9 @@ data_plot2 <- eph_data %>%
   group_by(CH04) %>%
   mutate(Percentage = (Total / sum(Total)) * 100)  # Convertir en porcentajes
 
-# Crear el gráfico
+# Crear el gráfico 2
+
+Grafico_2 <-
 ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
                        y = Percentage, 
                        fill = factor(CH04))) + 
@@ -398,6 +401,8 @@ ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")),
 Es más, parece que ambos sexos tienen la misma distribución de Estado ocupacional. Veamos cómo sumar una capa de información al gráfico que nos brinde mayor exactitud para la interpretación.
 
 ```{r grafico_barras23456, echo=TRUE}
+
+Grafico_3 <-
 ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
                        y = Percentage, 
                        fill = factor(CH04))) + 
