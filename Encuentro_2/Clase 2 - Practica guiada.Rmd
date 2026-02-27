@@ -1,6 +1,6 @@
 ---
 title: "Introducción a R para Ciencias Sociales. Aplicación práctica en la EPH"
-subtitle: "Clase 2 - Practica Guiada"
+subtitle: "Clase  - Practica Guiada"
 output:
   html_notebook:
     toc: yes
@@ -16,7 +16,7 @@ output:
 ## Ejercicio 1: 
 - Crear un OBJETO llamado _OBJETO_ definido como el resultado de la suma: 5 + 6
 ```{r}
-OBJETO <- 5+6 
+ve <- 5+6 
 OBJETO
 ```
 <br>
