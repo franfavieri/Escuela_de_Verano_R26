@@ -107,7 +107,7 @@ class: inverse
 #### - 🔄 **Automatización:** Permite **sistematizar tareas repetitivas** y optimizar flujos de trabajo.  
 #### - 🛠️ **Personalización:** Posibilidad de **crear funciones a medida** para adaptarse a necesidades específicas.  
 #### - 📌 **Reproductibilidad:** Garantiza la **reproducibilidad y estandarización** de procesos.  
-#### - ⚡ **Eficiencia:** Destina más memoria al funcionamiento que a la plataforma (**vs SPSS o SAS**).  
+
 
 
 ---
@@ -118,8 +118,7 @@ class: inverse
 ### - Su comunidad potencia la capacidad de consulta y respuesta.
 
 
-```{r echo=FALSE, out.width = '70%', fig.align = 'center'}
-#ver cambiar imagen
+```{r echo=FALSE, out.height = '350px', fig.align = 'center'}
 knitr::include_graphics("img/r_ayuda.png")
 ```
 📖  [RladiesBA](https://rladiesba.netlify.app/)
