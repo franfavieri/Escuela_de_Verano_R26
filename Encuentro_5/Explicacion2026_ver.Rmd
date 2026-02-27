@@ -4,14 +4,14 @@ author: "Francisco Favieri | Beatriz Soria | Anabella Abarzua Cutroni"
 subtitle: 'Escuela de Verano: Taller de Introducción al procesamiento y análisis de
   datos sobre mercado de trabajo con R'
 output:
-  pdf_document:
-    toc: true
-  html_notebook:
-    toc: true
-    toc_float: true
   html_document:
     toc: true
     df_print: paged
+  html_notebook:
+    toc: true
+    toc_float: true
+  pdf_document:
+    toc: true
   word_document:
     toc: true
 ---
