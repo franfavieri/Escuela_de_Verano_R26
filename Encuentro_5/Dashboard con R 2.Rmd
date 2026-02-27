@@ -1,0 +1,206 @@
+---
+title: "Encuentro 5: Dashboard en RMarkdown"
+author: "Francisco Favieri | Beatriz Soria | Anabella Abarzua Cutroni"
+subtitle: 'Escuela de Verano: Taller de Introducción al procesamiento y análisis de
+  datos sobre mercado de trabajo con R'
+date: 2026
+output: 
+  flexdashboard::flex_dashboard:
+    theme:
+      bg: "#383838" #color del fondo
+      fg: "#FDF7F7" #color del texto principal
+      primary: "#9725BA" #color para acentuar elementos como barras de navegación, botones etc.
+      base_font:
+        google: Prompt
+code_font:
+google: JetBrains Mono
+orientation: rows # también puede ser colums
+vertical_layout: scroll
+---
+
+```{r setup, include=FALSE}
+
+#cargamos las librerías necesarias
+
+library(flexdashboard)
+library(tidyverse)
+library(kableExtra)
+library(ggiraph)
+library(scales)
+```
+
+```{r}
+# Cargamos las tablas y gráficos que elaboramos en el encuentro 4
+
+load('/Users/aabar/Documents/Mi oficio trans/Rtrabajo/Escuela_de_Verano_R26/encuentro_4_productos.RData')
+```
+
+```{r}
+# Pasamos los gráficos generados en GGPLOT a gráficos interactivos
+
+## GRAFICO 1
+
+Grafico_1_INTERAC <-
+ggplot(data_plot, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), y = Percentage)) +
+  geom_bar_interactive(stat = "identity", fill = "steelblue") +
+  labs(title = "Gráfico 1. Distribución porcentual de la Población Económicamente Activa. 3er trimestre de 2024. Gran Mendoza. Valores relativos.",
+       x = " ",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100), 
+                     labels = percent_format(scale = 1)) +
+  theme_classic()
+
+## GRÁFICO 2
+
+Grafico_2_INTERAC <-
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar_interactive(stat = "identity", position = "dodge", show.legend = FALSE) + # dogce hace que las barras estén una al lado de otra en vez de apiladas. Sacamos la leyenda para no repetir información.
+  facet_wrap(~ CH04, 
+             labeller = as_labeller(c("1" = "Varón", "2" = "Mujer"))) +   # Usamos labeller para asignar nombres a los códigos 1 y 2
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+
+## GRÁFICO 3
+
+Grafico_3_INTERAC <-
+ggplot(data_plot2, aes(x = factor(ESTADO, labels = c("Ocupado", "Desocupado")), 
+                       y = Percentage, 
+                       fill = factor(CH04))) + 
+  # show.legend = FALSE elimina la leyenda lateral
+  geom_bar_interactive(stat = "identity", position = "dodge", show.legend = FALSE) +  # AGREGAMOS INTERACCIÓN
+  # Usamos labeller para asignar nombres a los códigos 1 y 2
+  facet_wrap_interactive(~ CH04, 
+             labeller = as_labeller(c("1" = "Varones", "2" = "Mujeres"))) + # AGREGAMOS INTERACCIÓN
+  geom_text_interactive(aes(label = paste0(round(Percentage, 1), "%")), # AGREGAMOS INTERACCIÓN
+          vjust = -0.5,           # Ajuste vertical (arriba de la barra)
+          size = 3.5 ) +         # Tamaño de letra
+  labs(title = "Gráfico 1. Distribución porcentual de la PEA",
+       subtitle = "3er trimestre de 2024. Gran Mendoza.",
+       x = "Estado Ocupacional",
+       y = "Porcentaje (%)",
+       caption = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC") +
+  scale_y_continuous(limits = c(0, 100)) +
+  theme_classic()
+```
+
+Presentación
+===============
+
+En esta clase vamos crear un Dashborad en RMarkdown Usando una extensión de RMarkdown, el paquete `flexdashboard`, podemos crear una presentacion de los datos que simula algunas características de un dashboard que honestamente es un documento HTLM, con alguna movilidad y que con fines prácticos se ve como una pagina web estática pero tiene pequeños detalles.
+
+Row 1 {.tabset .tabset-fade}
+--------------------------
+### **PASOS A SEGUIR**
+
+1. Configurar el YALM:
+
+*output:* 
+  *flexdashboard::flex_dashboard:*
+    *theme:*
+      *bg: "#383838" #color del fondo*
+      *fg: "#FDF7F7" #color del texto principal*
+      *primary: "#9725BA" #color para acentuar elementos como barras de navegación, botones etc.*
+      *base_font:*
+        *google: Prompt*
+        
+2. Cargar los paquetes necesarios: *flexdashboard, tidyverse, kableExtra, ggiraph, scales*.
+
+3. Cargar los "productos" del análisis que hicimos en el encuentro 4: *load(.RData)*
+
+4. Transformar nuestros graficos a interactivos con el paquete `ggiraph`. Esto nos permite que los elemtos se adapten al lienza del dashboard y cobren cierto grado de interactividad.
+
+### **MUNDO APARTE**
+
+  Para comunicar mejor nuestros reaultados tanto en el diseño del dashboard, como en los gráficos deberíamos elegir una paleta de colores, un estilo de letra, una estructura de la presentación de los gráficos, en spitesis deberiamos crear una narrativa de resultados. 
+  Esta clase presenta solo una plantilla para enteder la lógica del dashboard en el contexto de trabajo de RMD. Lo demás es contenido de otro curso. Continuara...
+
+Tablas
+=============
+  Nos gustan las tablas admitamoslo. En este apratado presentamos la tabla más completa y mejor lograda en el encuentro 4
+  
+### VISTA GENERAL DE LOS DATOS
+
+  En este espacio podemos comentar la tabla, analizarla, brindar contexto...
+
+```{r}
+tabla_eph3 %>%
+  kable(format = "html", caption = "Tabla 1. Distribución de la población por estado, sexo y grupo de edad. 3er trimestre de 2024. Total país. Valores absolutos.") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"),  
+                full_width = FALSE, position = "center") %>%
+  add_header_above(c(" " = 1, "Varones" = 3, "Mujeres" = 3)) %>%  # Agrupamos las columnas principales
+  column_spec(2:4, bold = TRUE) %>% # Resaltamos la parte de Varones
+  column_spec(5:7, bold = TRUE, color = "#9725BA") %>% # Resaltamos la parte de Mujeres
+  footnote(general_title = "Fuente: Elaboración propia en base a microdatos de EPH-INDEC.", 
+           general = "Nota: Son valores no ponderados")
+```
+
+Gráficos
+=================
+
+Presentamos los tres gráficos donde distinguíamos entre ocupados y desocupados. 
+INSERTE SU INTERPRETACIÓN AQUÍ.
+
+Row 1 {.tabset .tabset-fade}
+-----------------
+
+### Grafico general
+
+```{r, echo=FALSE}
+
+# Renderizar el objeto para que sea interactivo (tenga botones y zoom) y responsivo (se adapte a las ventanas del dashboard)
+
+girafe(
+  ggobj = Grafico_1_INTERAC,
+  width_svg = 6, 
+  height_svg = 4,
+  options = list(
+    opts_hover(css = "fill:red;cursor:pointer;"),
+    opts_sizing(rescale = FALSE) # Esto hace que se adapte al tamaño del cuadro
+  )
+)
+
+```
+Row 2 {.tabset .tabset-fade}
+----------------- 
+
+### Grafico por sexo
+
+```{r}
+
+girafe(
+  ggobj = Grafico_2_INTERAC,
+  width_svg = 6, 
+  height_svg = 4,
+  options = list(
+    opts_hover(css = "fill:red;cursor:pointer;"),
+    opts_sizing(rescale = FALSE) # Esto hace que se adapte al tamaño del cuadro
+  )
+)
+
+```
+
+### Grafico por sexo con porcentajes
+
+```{r}
+
+girafe(
+  ggobj = Grafico_3_INTERAC,
+  width_svg = 6, 
+  height_svg = 4,
+  options = list(
+    opts_hover(css = "fill:red;cursor:pointer;"),
+    opts_sizing(rescale = FALSE) # Esto hace que se adapte al tamaño del cuadro
+  )
+)
+
+```
+
