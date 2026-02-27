@@ -807,14 +807,17 @@ unique(Datos$AGLOMERADO)
 > las filas donde el area sea mayor a 15 millones.
 
 ```{r,eval=F,include=F}
-#install.packages("readxl") 
+#install.packages("readxl") # Si no tenemos instalado el paquete readxl, lo instalamos una sola vez
+# Cargamos el paquete readxl para poder leer archivos de Excel
 library (readxl)
 
-comunas <- read_excel("bases/comunas.xlsx")
+comunas <- read_excel("bases/comunas.xlsx") # comunas$AREA significa: "la columna AREA del dataframe comunas"
 mean(comunas$AREA)
 sum(comunas$AREA)
-area_comunas_df<- comunas[,c("AREA","COMUNAS")]
-grandes_df<- comunas[comunas$AREA > 15000000,]
+area_comunas_df<- comunas[,c("AREA","COMUNAS")] # Seleccionamos todas las filas (antes de la coma)
+# y solo las columnas "AREA" y "COMUNAS"
+grandes_df<- comunas[comunas$AREA > 15000000,] # Seleccionamos solo las filas donde AREA > 15000000
+# y dejamos todas las columnas (por eso después de la coma no ponemos nada)
 
 ```
 
