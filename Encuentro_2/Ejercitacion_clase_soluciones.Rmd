@@ -1,8 +1,7 @@
 ---
 title: "Soluciones -Ejercitación sobre R"
-author:  "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R - Febrero 2025. 
+author:  "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R - Febrero 2026" 
 
-Francisco Favieri | Beatriz Soria"
 output:
   html_document:
     toc: true
@@ -47,7 +46,7 @@ suma_cinco <- numeros + 5
 # Mostramos los resultados
 tercer_elemento
 suma_cinco
-multiplicacion_pares
+
 ```
 
 ## Ejercicio 3: Data Frames

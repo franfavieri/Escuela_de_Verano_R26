@@ -1,8 +1,6 @@
 ---
 title: "Ejercitación sobre R"
-author:  "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R - Febrero 2025. 
-
-Francisco Favieri | Beatriz Soria"
+author:  "Escuela de Verano: Taller de Introducción al procesamiento y análisis de datos sobre mercado de trabajo con R - Febrero 2026"
 output:
   html_document:
     toc: true
