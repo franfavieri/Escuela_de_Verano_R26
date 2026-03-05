@@ -1,0 +1,149 @@
+---
+title: "Guardar Objetos y Archivos"
+subtitle: "Escuela de Verano de R 2026"
+author: 
+  - "Francisco Favieri"
+  - "Beatriz Soria"
+  - "Anabella Abarzúa Cutroni"
+date: "Marzo, 2026"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+    transition: faster
+    highlight: tango
+  html_document:
+    theme: flatly
+    highlight: pygments
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# Estoy cansado jefe
+
+Durante la etapa de importacion y preprocesamiento de datos generamos
+una gran cantidad de objetos, mayoritariamente data frames. Algunos
+"productos" son experimentos o borradores y otros los queremos guardar
+como "insumos" para el analisis y elaboracion de informes, papers y
+demás formas de comunicacion académica.
+
+# ¿Cómo hacemos?
+
+Hay distantas vías: veamos.
+
+## Las librerías para guardar
+
+Primero, necesitamos cargar las librerías necesarias. Tidyverse maneja
+CSVs, pero para Excel y SPSS necesitamos complementos específicos.
+
+```{r}
+library(tidyverse) # Para manipulación y CSV
+library(writexl)  # Para Excel
+library(haven)    # Para SPSS (.sav)
+```
+
+## ¿Dónde estoy? El directorio de trabajo.
+
+BUENA PRÁCTICA: guardar todo en un proyecto. Es como una cajita donde R
+va a ejecutar todo y va a guardar por defecto todo en una carpeta
+específica: **la carpeta del proyecto**.
+
+```{r}
+getwd()
+```
+
+Veamos en REstudio la configuración del proyecto Tools/Project Options.
+
+## "Preciadas" bases y tablitas: exportar Tablas según su formato (Excel, SPSS y CSV)
+
+Hay gente que si no le mandas un excel no sabe con qué comer esos datos, no pasa nada. La comunidad R es generosa y pensó en esas traducciones de entornos de trabajo. Cada formato tiene su propia función. 
+
+### Guardar en CSV
+
+Es el formato más universal. Usamos la funcion `write_csv()`, que es más
+rápida y eficiente que el write.csv básico de R.
+
+```{r}
+write_csv(mi_data, "mi_data_exportada.csv") #nombre del objeto y nombre y formato del archivo entre comillas.
+```
+
+### Guardar en Excel (.xlsx)
+
+Usamos el paquete `writexl`.
+
+```{r}
+write_xlsx(mi_data, "mi_data_exportada.xlsx") #nombre del objeto y nombre y formato del archivo entre comillas.
+```
+
+### Guardar en SPSS (.sav)
+
+Para esto usamos el paquete `haven`. Es vital si trabajas en ciencias
+sociales o con software estadístico tradicional.
+
+```{r}
+write_sav(mi_data, "mi_data_exportada.sav") #nombre del objeto y nombre y formato del archivo entre comillas.
+```
+
+### Guardar archivos de datos nativos (.RData o .rds) 
+
+Cuando ya estemos comodos/as en el entorno de R vamos a queres guardar el objeto tal cual está en R manteniendo tipos de datos complejos. Esto va a suceder en el futuro cuando trabajen con modelado de datos por ejemplo, nos vamos a olvidar del SPSS y el Excel tan pesados por cosas intrascendentes... Lo juro.
+
+#### RDS: Guarda un solo objeto. 
+
+Es más limpio. Elegimos el intento mejor logrado. Evitamos guardar tablas con errores o repetidas.
+
+```{r}
+saveRDS(mi_data, "mi_data_objeto.rds")
+```
+
+#### RData: Guarda todo tu espacio de trabajo o múltiples objetos. 
+
+Guarda todo lo que haya creado en enviroment. Puede ser muy pesado y confuso si venimos trabajando muchas horas, un intento tras otro. Pero ante la duda, guarda todo.
+
+```{r}
+save(mi_data, file = "mi_sesion.RData")
+```
+
+### Guardar Gráficos (ggplot2)
+
+El gráfico puede guardarse como un objeto (con RDS, ver codigos anteriores) y/o como una imagen en distintos formatos (.png, .pdf, .jpg). Cuando usas tidyverse, usamos `ggsave()`. Importante: esta función detecta automáticamente el formato por la extensión que le pongas al nombre (.png, .pdf, .jpg).
+
+```{r}
+# al grpafico ya creado, prolijo y bonito lo guardamos
+
+#PNG
+
+ggsave("mi_grafico_final.png", plot = mi_grafico, width = 8, height = 6, dpi = 300) #nombre y extesión para guardar, el nombre del objeto gráfico. Parámetros de imagen
+
+#JPG
+
+ggsave("mi_grafico_final.jpg", plot = mi_grafico, width = 8, height = 6, dpi = 300)
+
+#PDF
+
+ggsave("mi_grafico_final.pdf", plot = mi_grafico)
+
+```
+
+# **LO MAS IMPORTANTE** 
+
+Guardar el codigo en RMarkdown o simplemente el scrip
+
+## Guardar el Script de R (.R)
+
+Un script es simplemente un archivo de texto plano con extensión .R. Normalmente lo guardamos haciendo clic en el disco (💾) de RStudio.
+
+## Guardar el archivo R Markdown (.Rmd)
+
+El archivo .Rmd es tu "cuaderno de bitácora". Al guardarlo, conservas el texto, el código y la configuración del encabezado (YAML). Normalmente lo guardamos haciendo clic en el disco (💾) de RStudio.
+
+## Exportar el HTML final
+
+El archivo de salida (el HTML) es independiente, se genera cuando usamos `Knit` desde un archivo `RMD`.
+
+1. Clic en el botón **Knit** (el icono de la tejedora).
+2. Se generará un archivo `.html` en la misma carpeta donde está tu `.Rmd`.
